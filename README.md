@@ -33,7 +33,7 @@ O projeto foi construído focando em performance e segurança, seguindo boas pr�
 | Membro | Função | GitHub |
 | :--- | :--- | :--- |
 | **Kaio Pereira** | Software Engineer | [@kaiooprs](https://github.com/kaiooprs) |
-| **Alessy Kaua** | Software Engineer | [@seu-usuario](#) |
+| **Alessy Kaua** | Software Engineer | [@KauaLemos](https://github.com/KauaLemos) |
 | **Vitoria Rabelo** | Software Engineer | [@Vitoria-Rabelo](https://github.com/Vitoria-Rabelo) |
 | **Mariana Arcelino** | Software Engineer | [@marianaarcelino](https://github.com/marianaarcelino) |
 | **Priscila Holanda** | Software Engineer | [@PriHolanda](https://github.com/PriHolanda) |
