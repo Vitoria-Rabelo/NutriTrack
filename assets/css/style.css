@@ -61,11 +61,13 @@ ul {
     width: 100px;
     height: 60px;
     border-radius: 10%;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
 .menu-item a{
     color: var(--color-neutral-0);
+    margin-left: 20px;
 
 }
 
