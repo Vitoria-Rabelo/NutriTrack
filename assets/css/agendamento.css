@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.content{
+    margin-left: 300px;
+    padding: 30px;
+}
+
+.logo img  {
+    width: 140px;
+    height: auto;
+}
+
+.header-icons img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.btn-nova {
+    padding: 14px 22px;
+    border-radius: 24px;
+    background-color: #00a843;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.btn-nova:hover {
+    background-color: #9affc2;
+    color: #007830;
+}
+
+.listas-consultas{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.consulta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9fafb;
+    gap: 20px;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.hora {
+    background-color: #00a843;
+    color: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.dados {
+    flex: 1;
+}
+
+.dados h4{
+    font-size: 16px;
+    margin-bottom: 5px;
+    flex: 1;
+}
+
+.dados p {
+    color: #718096;
+}
+
+
+.btn-primary {
+    background-color: #00a843;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #008f39;
+}
+
+.btn-sec {
+    border: 1px solid #ccc;
+    background-color: transparent;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-sec:hover {
+    background-color: #f1f1f1;
+}
+
+.acoes {
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+
+.status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.status.confirmada {
+    background-color: #e1fbed;
+    color: #00a843;
+}
+
+.status.aguardando {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+.btn-sec {
+    border: 1px solid #ccc;
+    background-color: transparent;
+    padding: 8px 14px;
+    border-radius: 8px;
+}
+
+.resumo {
+    margin-top: 50px;
+    margin-left: 15px;
+}
