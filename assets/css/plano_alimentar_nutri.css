@@ -1,0 +1,124 @@
+body {
+    font-family: sans-serif;
+}
+
+.stat-card {
+  background-color: #ffffff;
+  box-shadow: 2px 5px 10px rgb(226, 226, 226);
+  border-radius: 15px;
+  padding: 30px 22px;
+  width: 1030px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 3%;
+  margin-top: 25px;
+}
+
+.plans-card {
+  background-color: #ffffff;
+  box-shadow: 2px 5px 10px rgb(226, 226, 226);
+  border-radius: 15px;
+  padding:25px 25px;
+  width: 1030px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 3%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card {
+    border: 2px solid rgb(206, 206, 206);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 15px;
+    transition: 0.3s;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card:hover {
+    border-color: green;
+}
+
+.plan-label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+.plan-value {
+    color: #5e5e5e;
+    font-size: 14px;
+}
+
+.label {
+  color: #000000;
+  font-size: 20px;
+  margin-bottom: 15px;
+  align-items: left;
+  display: inline-block;
+}
+
+.value {
+    color: #000000;
+    font-size: 15px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.select {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid green;
+    font-size: 16px;
+    margin-bottom: 18px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+}
+
+.btn-view {
+    width: 220px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #00a843;
+    border: 2px solid #00a843;
+    color: white;  
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn-edit {
+    width: 220px;
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid #00a843;
+    background-color: white;
+    color: #00a843;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
