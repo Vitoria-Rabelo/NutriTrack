@@ -66,8 +66,6 @@ main {
     font-size: 17px;
     font-weight: bold;
     padding: 12px 16px;
-    display: flex;
-    align-items: center;
 }
 
 .nav-items a:hover {
