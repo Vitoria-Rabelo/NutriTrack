@@ -185,3 +185,16 @@ main {
     border-radius: 20px;
     padding: 20px
 }
+
+.barra {
+    background-color: #ffffff;
+    gap: 12px;
+    text-align: start;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 20px;
+    height: 100px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+    justify-content: center;
+}
