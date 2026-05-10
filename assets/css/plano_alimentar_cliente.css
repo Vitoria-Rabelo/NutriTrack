@@ -2,16 +2,18 @@ body {
     font-family: sans-serif;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 .stat-card {
   background-color: #00a441;
   border-radius: 15px;
   padding: 20px;
-  width: 1030px;
+  margin: 25px 3% 0 3%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 3%;
-  margin-top: 25px;
 }
 
 .reminder-card {
@@ -19,14 +21,11 @@ body {
   border: 2px solid #b1ffd0;
   border-radius: 15px;
   padding: 20px;
-  width: 1030px;
+  margin: 25px 3% 25px 3%;
   justify-content: left;
-  margin-left: 3%;
-  margin-top: 25px;
   font-weight: bold;
   color: #008236;
   font-size: 18px;
-  margin-bottom: 25px;
 }
 
 
@@ -42,9 +41,8 @@ body {
 .grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  width: 1030px;
-  margin-left: 3%;
+  gap: 15px;
+  margin: 10px 3% 0 3%;
   
 }
 
@@ -89,12 +87,10 @@ body {
   background-color: rgba(255, 255, 255, 0.908);
   border-radius: 15px;
   overflow: hidden;
-  width: 1030px;
+  margin: 25px 3% 0 3%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 3%;
-  margin-top: 25px;
   box-shadow: 2px 5px 10px rgb(226, 226, 226);
 }
 
@@ -116,6 +112,18 @@ body {
 .card-hour {
   font-size: 20px;
 } 
+
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
 
 
 
