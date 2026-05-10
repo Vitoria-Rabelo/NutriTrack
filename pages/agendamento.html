@@ -1,181 +1,427 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Kaio Pereira, Alessy Kaua, Vitoria Rabelo, Mariana Arcelino, Priscila Holanda">
-    <title>NutriTrack</title>
-    <link rel="stylesheet" href="../assets/css/style.css"/>
-    <link rel="stylesheet" href="../assets/css/agendamentos.css">
+
+    <title>NutriTrack - Agendamentos</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/evolucao.css">
+    <link rel="stylesheet" href="../assets/css/agendamento.css">
 </head>
 
 <body>
-    <aside>
-        <div class="logo">
-            <img src="logo.png" alt="NutriTrack"/>
+
+    <aside class="sidebar">
+
+        <div class="nav-logo">
+            <img src="../assets/image/logo.png" alt="Logo NutriTrack" class="img-logo">
+            <p class="logo-text">Nutricionista</p>
         </div>
-        <nav>
-            <ul>
-                <li class="menu-item">
-                    <a href="#">
-                        Agendadmentos
-                    </a>
-                </li>
 
-                <li class="menu-item">
-                    <a href="#">
-                        Planos alimentares
-                    </a>
-                </li>
+        <nav class="navbar">
 
-                <li class="menu-item">
-                    <a href="#">
-                        Evolução
-                    </a>
-                </li>
-            </ul>
+            <div class="nav-items">
+
+                <a href="dashboard.html">
+                    <i class="fa-regular fa-clipboard"></i>
+                    Dashboard
+                </a>
+
+                <a href="agendamento.html" class="active">
+                    <i class="fa-solid fa-calendar"></i>
+                    Agendamentos
+                </a>
+
+                <a href="plano_alimentar_nutri.html">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    Planos Alimentares
+                </a>
+
+                <a href="evolucao_nutri.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Evolução Clientes
+                </a>
+
+            </div>
+
         </nav>
+
+        <div class="nav-exit">
+
+            <a class="exit" href="../index.html">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Sair
+            </a>
+
+        </div>
+
     </aside>
 
-    <header>
-        <div>
-            <h1>Agendamentos</h1>
-            <p>Bem-vindo, Dra. Maria</p>
-        </div>
-
-        <div class="header-icons">
-            <img src="notifications.svg" alt="Notificações"/>
-            <img src="user_profile.svg" alt="Perfil"/>
-        </div>
-    </header>
-    
     <main class="content">
+
+        <header class="page-header">
+
+            <div class="header-title-group">
+                <h1 class="title-text">Agendamentos</h1>
+                <p class="welcome-text">Bem-vinda, Dra. Maria Silva!</p>
+            </div>
+
+            <div class="user-top-profile">
+
+                <div class="user-top-text">
+                    <span class="user-top-name">Dra. Maria Silva</span>
+                    <span class="user-top-since">CRN: 12345</span>
+                </div>
+
+                <div class="user-top-avatar">
+                    DM
+                </div>
+
+            </div>
+
+        </header>
+
         <div class="card">
+
             <div class="card-header">
-                
+
                 <div>
                     <h2>Consultas de hoje</h2>
                     <p>Sábado, 02 de maio de 2026</p>
                 </div>
 
-                <button class="btn-nova">+ Nova Consulta</button>
+                <button class="btn-nova">
+                    + Nova Consulta
+                </button>
+
             </div>
-            
+
             <div class="listas-consultas">
-                
                 <div class="consulta">
+
+                    <div class="hora">
+                        07:00
+                    </div>
+
+                    <div class="dados">
+                        <h4>Ana Farias</h4>
+                        <p>Retorno</p>
+                    </div>
+
+                    <div class="acoes">
+
+                        <span class="status confirmada">
+                            Confirmada
+                        </span>
+
+                        <button class="btn-primary">
+                            Iniciar
+                        </button>
+
+                        <button class="btn-sec">
+                            Reagendar
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="consulta">
+
+                    <div class="hora">
+                        08:00
+                    </div>
+
+                    <div class="dados">
+                        <h4>Carlos Santos</h4>
+                        <p>Primeira consulta</p>
+                    </div>
+
+                    <div class="acoes">
+
+                        <span class="status confirmada">
+                            Confirmada
+                        </span>
+
+                        <button class="btn-primary">
+                            Iniciar
+                        </button>
+
+                        <button class="btn-sec">
+                            Reagendar
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="consulta">
+
                     <div class="hora">
                         09:00
                     </div>
+
                     <div class="dados">
                         <h4>João Silva</h4>
                         <p>Retorno</p>
                     </div>
+
                     <div class="acoes">
-                        <span class="status confirmada">Confirmada</span>
-                        <button class="btn-primary">Iniciar</button>
-                        <button class="btn-sec">Reagendar</button>
+
+                        <span class="status aguardando">
+                            Aguardando
+                        </span>
+
+                        <button class="btn-primary">
+                            Iniciar
+                        </button>
+
+                        <button class="btn-sec">
+                            Reagendar
+                        </button>
+
                     </div>
+
                 </div>
 
                 <div class="consulta">
+
                     <div class="hora">
                         10:00
                     </div>
+
                     <div class="dados">
                         <h4>Ana Santos</h4>
                         <p>Primeira consulta</p>
                     </div>
+
                     <div class="acoes">
-                        <span class="status confirmada">Confirmada</span>
-                        <button class="btn-primary">Iniciar</button>
-                        <button class="btn-sec">Reagendar</button>
-                    </div>        
+
+                        <span class="status confirmada">
+                            Confirmada
+                        </span>
+
+                        <button class="btn-primary">
+                            Iniciar
+                        </button>
+
+                        <button class="btn-sec">
+                            Reagendar
+                        </button>
+
+                    </div>
+
                 </div>
 
                 <div class="consulta">
+
                     <div class="hora">
                         11:00
                     </div>
+
                     <div class="dados">
                         <h4>Carlos Oliveira</h4>
                         <p>Retorno</p>
                     </div>
+
                     <div class="acoes">
-                        <span class="status aguardando">Aguardando</span>
-                        <button class="btn-primary">Iniciar</button>
-                        <button class="btn-sec">Reagendar</button>
+
+                        <span class="status aguardando">
+                            Aguardando
+                        </span>
+
+                        <button class="btn-primary">
+                            Iniciar
+                        </button>
+
+                        <button class="btn-sec">
+                            Reagendar
+                        </button>
+
                     </div>
+
                 </div>
 
                 <div class="consulta">
+
+                    <div class="hora">
+                        13:00
+                    </div>
+
+                    <div class="dados">
+                        <h4>Guilherme Lemos</h4>
+                        <p>Retorno</p>
+                    </div>
+
+                    <div class="acoes">
+
+                        <span class="status confirmada">
+                            Confirmada
+                        </span>
+
+                        <button class="btn-primary">
+                            Iniciar
+                        </button>
+
+                        <button class="btn-sec">
+                            Reagendar
+                        </button>
+
+                    </div>
+
+                </div>                
+
+                <div class="consulta">
+
                     <div class="hora">
                         14:00
                     </div>
+
                     <div class="dados">
                         <h4>Marina Costa</h4>
                         <p>Avaliação</p>
                     </div>
+
                     <div class="acoes">
-                        <span class="status confirmada">Confirmada</span>
-                        <button class="btn-primary">Iniciar</button>
-                        <button class="btn-sec">Reagendar</button>
+
+                        <span class="status confirmada">
+                            Confirmada
+                        </span>
+
+                        <button class="btn-primary">
+                            Iniciar
+                        </button>
+
+                        <button class="btn-sec">
+                            Reagendar
+                        </button>
+
                     </div>
+
                 </div>
 
                 <div class="consulta">
+
                     <div class="hora">
                         15:00
                     </div>
+
                     <div class="dados">
                         <h4>Pedro Alves</h4>
                         <p>Retorno</p>
                     </div>
+
                     <div class="acoes">
-                        <span class="status aguardando">Aguardando</span>
-                        <button class="btn-primary">Iniciar</button>
-                        <button class="btn-sec">Reagendar</button>
+
+                        <span class="status aguardando">
+                            Aguardando
+                        </span>
+
+                        <button class="btn-primary">
+                            Iniciar
+                        </button>
+
+                        <button class="btn-sec">
+                            Reagendar
+                        </button>
+
                     </div>
+
                 </div>
 
                 <div class="consulta">
+
                     <div class="hora">
                         16:00
                     </div>
+
                     <div class="dados">
                         <h4>Juliana Lima</h4>
                         <p>Primeira consulta</p>
                     </div>
+
                     <div class="acoes">
-                        <span class="status confirmada">Confirmada</span>
-                        <button class="btn-primary">Iniciar</button>
-                        <button class="btn-sec">Reagendar</button>
+
+                        <span class="status confirmada">
+                            Confirmada
+                        </span>
+
+                        <button class="btn-primary">
+                            Iniciar
+                        </button>
+
+                        <button class="btn-sec">
+                            Reagendar
+                        </button>
+
                     </div>
+
                 </div>
-        
+
+                <div class="consulta">
+
+                    <div class="hora">
+                        17:00
+                    </div>
+
+                    <div class="dados">
+                        <h4>Denis Nogueira</h4>
+                        <p>Primeira consulta</p>
+                    </div>
+
+                    <div class="acoes">
+
+                        <span class="status aguardando">
+                            Aguardando
+                        </span>
+
+                        <button class="btn-primary">
+                            Iniciar
+                        </button>
+
+                        <button class="btn-sec">
+                            Reagendar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
         <div class="resumo">
 
-            <div class="box">
+            <div class="box total">
                 <p>Total de consultas</p>
+                <h2>10</h2>
+            </div>
+
+            <div class="box confirmadas">
+                <p>Confirmadas</p>
                 <h2>6</h2>
             </div>
 
-            <div class="box">
-                <p>Confirmadas</p>
+            <div class="box aguardando">
+                <p>Aguardando</p>
                 <h2>4</h2>
             </div>
 
-            <div class="box">
-                <p>Aguardando</p>
-                <h2>2</h2>
-            </div>
-
         </div>
+        
+    
 
     </main>
+
     <footer class="footer">
     </footer>
+
 </body>
+
 </html>

@@ -85,6 +85,7 @@ main {
 
 .nav-items a i {
     margin-right: 11px;
+    width: 20px;
 }
 
 .nav-exit {
