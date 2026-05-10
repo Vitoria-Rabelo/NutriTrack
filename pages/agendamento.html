@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Kaio Pereira, Alessy Kaua, Vitoria Rabelo, Mariana Arcelino, Priscila Holanda">
-    
+
     <title>NutriTrack - Agendamentos</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -14,47 +14,64 @@
 </head>
 
 <body>
+
     <aside class="sidebar">
+
         <div class="nav-logo">
             <img src="../assets/image/logo.png" alt="Logo NutriTrack" class="img-logo">
             <p class="logo-text">Nutricionista</p>
         </div>
 
         <nav class="navbar">
+
             <div class="nav-items">
 
-                <a href=""><i class="fa-regular fa-clipboard"></i> Dashboard</a>
+                <a href="">
+                    <i class="fa-regular fa-clipboard"></i>
+                    Dashboard
+                </a>
 
                 <a href="agendamento.html" class="active">
-                    <i class="fa-solid fa-arrow-trend-up"></i> Agendamentos
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                    Agendamentos
                 </a>
 
                 <a href="plano_alimentar_nutri.html">
-                    <i class="fa-regular fa-lightbulb"></i> Planos Alimentares
+                    <i class="fa-regular fa-lightbulb"></i>
+                    Planos Alimentares
                 </a>
 
-                <a href="">
-                    <i class="fa-regular fa-user"></i> Evolução Clientes
+                <a href="evolucao_nutri.html">
+                    <i class="fa-regular fa-user"></i>
+                    Evolução Clientes
                 </a>
+
             </div>
+
         </nav>
 
         <div class="nav-exit">
+
             <a class="exit" href="../index.html">
-                <i class="fa-solid fa-right-from-bracket"></i> Sair
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Sair
             </a>
+
         </div>
+
     </aside>
 
-    <main>
+    <main class="content">
 
         <header class="page-header">
+
             <div class="header-title-group">
                 <h1 class="title-text">Agendamentos</h1>
                 <p class="welcome-text">Bem-vinda, Dra. Maria Silva!</p>
             </div>
 
             <div class="user-top-profile">
+
                 <div class="user-top-text">
                     <span class="user-top-name">Dra. Maria Silva</span>
                     <span class="user-top-since">CRN: 12345</span>
@@ -63,7 +80,9 @@
                 <div class="user-top-avatar">
                     DM
                 </div>
+
             </div>
+
         </header>
 
         <div class="card">
@@ -82,6 +101,64 @@
             </div>
 
             <div class="listas-consultas">
+                <div class="consulta">
+
+                    <div class="hora">
+                        07:00
+                    </div>
+
+                    <div class="dados">
+                        <h4>Ana Farias</h4>
+                        <p>Retorno</p>
+                    </div>
+
+                    <div class="acoes">
+
+                        <span class="status confirmada">
+                            Confirmada
+                        </span>
+
+                        <button class="btn-primary">
+                            Iniciar
+                        </button>
+
+                        <button class="btn-sec">
+                            Reagendar
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="consulta">
+
+                    <div class="hora">
+                        08:00
+                    </div>
+
+                    <div class="dados">
+                        <h4>Carlos Santos</h4>
+                        <p>Primeira consulta</p>
+                    </div>
+
+                    <div class="acoes">
+
+                        <span class="status confirmada">
+                            Confirmada
+                        </span>
+
+                        <button class="btn-primary">
+                            Iniciar
+                        </button>
+
+                        <button class="btn-sec">
+                            Reagendar
+                        </button>
+
+                    </div>
+
+                </div>
+
 
                 <div class="consulta">
 
@@ -95,7 +172,10 @@
                     </div>
 
                     <div class="acoes">
-                        <span class="status confirmada">Confirmada</span>
+
+                        <span class="status aguardando">
+                            Aguardando
+                        </span>
 
                         <button class="btn-primary">
                             Iniciar
@@ -104,6 +184,7 @@
                         <button class="btn-sec">
                             Reagendar
                         </button>
+
                     </div>
 
                 </div>
@@ -120,7 +201,10 @@
                     </div>
 
                     <div class="acoes">
-                        <span class="status confirmada">Confirmada</span>
+
+                        <span class="status confirmada">
+                            Confirmada
+                        </span>
 
                         <button class="btn-primary">
                             Iniciar
@@ -129,6 +213,7 @@
                         <button class="btn-sec">
                             Reagendar
                         </button>
+
                     </div>
 
                 </div>
@@ -145,7 +230,10 @@
                     </div>
 
                     <div class="acoes">
-                        <span class="status aguardando">Aguardando</span>
+
+                        <span class="status aguardando">
+                            Aguardando
+                        </span>
 
                         <button class="btn-primary">
                             Iniciar
@@ -154,9 +242,39 @@
                         <button class="btn-sec">
                             Reagendar
                         </button>
+
                     </div>
 
                 </div>
+
+                <div class="consulta">
+
+                    <div class="hora">
+                        13:00
+                    </div>
+
+                    <div class="dados">
+                        <h4>Guilherme Lemos</h4>
+                        <p>Retorno</p>
+                    </div>
+
+                    <div class="acoes">
+
+                        <span class="status confirmada">
+                            Confirmada
+                        </span>
+
+                        <button class="btn-primary">
+                            Iniciar
+                        </button>
+
+                        <button class="btn-sec">
+                            Reagendar
+                        </button>
+
+                    </div>
+
+                </div>                
 
                 <div class="consulta">
 
@@ -170,7 +288,10 @@
                     </div>
 
                     <div class="acoes">
-                        <span class="status confirmada">Confirmada</span>
+
+                        <span class="status confirmada">
+                            Confirmada
+                        </span>
 
                         <button class="btn-primary">
                             Iniciar
@@ -179,6 +300,7 @@
                         <button class="btn-sec">
                             Reagendar
                         </button>
+
                     </div>
 
                 </div>
@@ -195,7 +317,10 @@
                     </div>
 
                     <div class="acoes">
-                        <span class="status aguardando">Aguardando</span>
+
+                        <span class="status aguardando">
+                            Aguardando
+                        </span>
 
                         <button class="btn-primary">
                             Iniciar
@@ -204,6 +329,7 @@
                         <button class="btn-sec">
                             Reagendar
                         </button>
+
                     </div>
 
                 </div>
@@ -220,7 +346,10 @@
                     </div>
 
                     <div class="acoes">
-                        <span class="status confirmada">Confirmada</span>
+
+                        <span class="status confirmada">
+                            Confirmada
+                        </span>
 
                         <button class="btn-primary">
                             Iniciar
@@ -229,6 +358,36 @@
                         <button class="btn-sec">
                             Reagendar
                         </button>
+
+                    </div>
+
+                </div>
+
+                <div class="consulta">
+
+                    <div class="hora">
+                        17:00
+                    </div>
+
+                    <div class="dados">
+                        <h4>Denis Nogueira</h4>
+                        <p>Primeira consulta</p>
+                    </div>
+
+                    <div class="acoes">
+
+                        <span class="status aguardando">
+                            Aguardando
+                        </span>
+
+                        <button class="btn-primary">
+                            Iniciar
+                        </button>
+
+                        <button class="btn-sec">
+                            Reagendar
+                        </button>
+
                     </div>
 
                 </div>
@@ -239,22 +398,24 @@
 
         <div class="resumo">
 
-            <div class="box">
+            <div class="box total">
                 <p>Total de consultas</p>
+                <h2>10</h2>
+            </div>
+
+            <div class="box confirmadas">
+                <p>Confirmadas</p>
                 <h2>6</h2>
             </div>
 
-            <div class="box">
-                <p>Confirmadas</p>
+            <div class="box aguardando">
+                <p>Aguardando</p>
                 <h2>4</h2>
             </div>
 
-            <div class="box">
-                <p>Aguardando</p>
-                <h2>2</h2>
-            </div>
-
         </div>
+        
+    
 
     </main>
 
