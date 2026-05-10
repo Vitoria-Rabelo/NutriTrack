@@ -272,7 +272,6 @@ html {
     font-size: 16px;
     font-weight: 500;
     color: #718096;
-
 }
 
 #publico {
@@ -296,7 +295,6 @@ html {
     font-weight: bold;
     color: #1a1a1a;
     margin-bottom: 20px;
-
 }
 
 .publico-description {
@@ -304,7 +302,6 @@ html {
     font-weight: 500;
     color: #718096;
     text-align: center;
-
 }
 
 .publico-cards {
@@ -322,7 +319,6 @@ html {
 
 .card-pq:hover {
     border: #008f39 solid 2px;
-
 }
 
 .card-pq-title {
@@ -383,7 +379,6 @@ html {
     display: flex;
     gap: 50px;
     max-width: 1300px;
-    /* Aumentado de 1100px para 1300px */
     width: 100%;
 }
 
@@ -394,7 +389,6 @@ html {
     border-radius: 15px;
     flex: 1;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-
 }
 
 .contato-subtitle {

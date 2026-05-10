@@ -167,3 +167,378 @@ main {
     font-size: 16px;
     font-weight: bold;
 }
+
+.main-container {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+}
+
+.profile {
+    background-color: var(--primary-green);
+    width: 100%;
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    gap: 32px;
+}
+
+.profile-avatar {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.initials {
+    font-size: 40px;
+    color: var(--primary-green);
+    font-weight: bold;
+}
+
+.upload-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: #FFFFFF;
+    color: var(--primary-green);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.upload-btn i {
+    font-size: 16px;
+}
+
+#upload {
+    display: none;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile-name {
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.profile-since {
+    font-size: 16px;
+    color: #dcfce7;
+}
+
+.profile-card {
+    background-color: #ffffff40;
+    border-radius: 12px;
+    padding: 8px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.profile-card h3 {
+    font-size: 14px;
+    color: #dcfce7;
+}
+
+.profile-card span {
+    font-size: 16px;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.information-personal {
+    background-color: #FFFFFF;
+    width: 100%;
+    padding: 24px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inf-per-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inf-per-header h2 {
+    color: var(--text-primary);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn-edit {
+    border: none;
+    background-color: var(--primary-green);
+    color: #FFFFFF;
+    font-size: 16px;
+    padding: 9px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: #4a5565;
+    font-size: 16px;
+}
+
+.form-group input {
+    background-color: #f9fafb;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    color: var(--text-primary);
+    font-size: 16px;
+}
+
+.input-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+.input-icon i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #99a1af;
+
+}
+
+.input-icon input {
+    padding: 10px 10px 10px 35px;
+    flex: 1;
+    width: 100%;
+}
+
+.content-card {
+    background-color: #FFFFFF;
+    width: 100%;
+    padding: 24px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.content-title {
+    color: var(--text-primary);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.content-sumary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.health-card-peso {
+    padding: 16px;
+    background-color: #d0e4ffbd;
+    width: 330px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.peso-title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 6px;
+}
+
+.peso-title i {
+    color: #155dfb;
+}
+
+.peso-title p {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.peso-value {
+    color: #155dfb;
+    font-size: 28px;
+}
+
+.peso-information {
+    font-size: 12px;
+    color: #4a5565;
+}
+
+.health-card-altura {
+    padding: 16px;
+    background-color: #e6ceff96;
+    width: 330px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.altura-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.altura-title i {
+    color: #9810fa;
+}
+
+.altura-title p {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.altura-value {
+    color: #9810fa;
+    font-size: 28px;
+}
+
+.altura-information {
+    font-size: 12px;
+    color: #4a5565;
+}
+
+.health-card-imc {
+    padding: 16px;
+    background-color: #caffdadb;
+    width: 330px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.imc-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.imc-title i {
+    color: #00a63e;
+}
+
+.imc-title p {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.imc-value {
+    color: #00a63e;
+    font-size: 28px;
+}
+
+.imc-information {
+    font-size: 12px;
+    color: #4a5565;
+}
+
+.history {
+    background-color: #FFFFFF;
+    width: 100%;
+    padding: 24px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.history-title {
+    font-size: 20px;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.history-container {
+    display: flex;
+    gap: 8px;
+}
+
+.history-subtitle {
+    color: #4a5565;
+    font-size: 14px;
+    margin-bottom: 8px
+}
+
+.allergie-type {
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 13px;
+    background-color: #fbdcdc;
+    color: #e7000b;
+}
+
+.history-health {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.health-type {
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 13px;
+    background-color: #fef9c2;
+    color: #a65f00;
+}
+
+.history-medication {
+    font-size: 14px;
+    color: #364153;
+}

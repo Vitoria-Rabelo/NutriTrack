@@ -22,9 +22,9 @@
         <nav class="navbar">
             <div class="nav-items">
                 <a href=""><i class="fa-regular fa-clipboard"></i>Meu Plano Alimentar</a>
-                <a href="evolucao.html"><i class="fa-solid fa-arrow-trend-up"></i> Minha Evolução</a>
-                <a href="receitas.html"><i class="fa-regular fa-lightbulb"></i> Receitas</a>
-                <a href="perfil_cliente.html" class="active"><i class="fa-regular fa-user"></i> Meu Perfil</a>
+                <a href="evolucao.html"><i class="fa-solid fa-arrow-trend-up"></i>Minha Evolução</a>
+                <a href="receitas.html"><i class="fa-regular fa-lightbulb"></i>Receitas</a>
+                <a href="perfil_cliente.html" class="active"><i class="fa-regular fa-user"></i>Meu Perfil</a>
             </div>
         </nav>
 
@@ -51,6 +51,131 @@
                 <div class="user-top-avatar">JS</div>
             </div>
         </header>
+
+        <div class="main-container">
+            <section class="profile">
+                <div class="profile-avatar">
+                    <img id="profileImage" src="" alt="">
+                    <span class="initials">JS</span>
+
+                    <label for="upload" class="upload-btn"><i class="fa-solid fa-camera"></i></label>
+                    <input type="file" id="upload" accept="image/*">
+                </div>
+
+                <div class="profile-info">
+                    <h2 class="profile-name">João Silva</h2>
+                    <span class="profile-since">Cliente desde 2025</span>
+                    <div class="profile-card">
+                        <h3>Objetivo</h3>
+                        <span>Emagrecimento</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="information-personal">
+                <div class="inf-per-header">
+                    <h2>Informações Pessoais</h2>
+                    <button class="btn-edit"><i class="fa-regular fa-pen-to-square"></i>Editar</button>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Nome Completo</label>
+                        <input type="text" value="João Silva" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Data de Nascimento</label>
+                        <input type="text" value="15/03/1988" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <div class="input-icon">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input type="text" value="joao.silva@email.com" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Telefone</label>
+                        <div class="input-icon">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="text" value="(11) 98765-4321" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group full">
+                        <label>Endereço</label>
+                        <div class="input-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <input type="text" value="Rua das Flores, 456 - Jardins, São Paulo - SP, 01234-567"
+                                disabled>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-card">
+                <h2 class="content-title">Informações de Saúde</h2>
+
+                <div class="content-sumary">
+                    <div class="health-card-peso">
+                        <div class="peso-title">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                            <p>Peso Atual</p>
+                        </div>
+                        <h1 class="peso-value">82 kg</h1>
+                        <p class="peso-information">Última medição: 01/04/2026</p>
+                    </div>
+
+                    <div class="health-card-altura">
+                        <div class="altura-title">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <p>Altura</p>
+                        </div>
+                        <h1 class="altura-value">1,78 m</h1>
+                        <p class="altura-information">Cadastrado em: 15/01/2025</p>
+                    </div>
+
+                    <div class="health-card-imc">
+                        <div class="imc-title">
+                            <i class="fa-solid fa-chart-column"></i>
+                            <p>IMC</p>
+                        </div>
+                        <h1 class="imc-value">26.2</h1>
+                        <p class="imc-information">Classificação: Sobrepeso</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="history">
+                <h2 class="history-title">Histórico Médico</h2>
+
+                <div class="history-allergies">
+                    <h4 class="history-subtitle">Alergias Alimentares</h4>
+                    <div class="history-container">
+                        <div class="allergie-type">Lactose</div>
+                        <div class="allergie-type">Amendoim</div>
+                    </div>
+                </div>
+
+                <div class="history-health">
+                    <h4 class="history-subtitle">Condições de Saúde</h4>
+                    <div class="history-container">
+                        <div class="health-type">Colesterol Alto</div>
+                    </div>
+                </div>
+
+                <div class="history-medication">
+                    <h4 class="history-subtitle">Medicamentos em Uso</h4>
+                    <div class="history-container">
+                        <div class="medication-type">Nenhum medicamento contínuo</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
     </main>
 </body>
 
