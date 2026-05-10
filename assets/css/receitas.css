@@ -398,8 +398,19 @@ main {
 }
 
 @media (max-width: 480px) {
+     body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        min-height: auto;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
     .card-hover {
-        max-width: 100%; 
+        max-width: 100%;
         height: 450px;
     }
     
