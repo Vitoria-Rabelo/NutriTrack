@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Kaio Pereira, Alessy Kaua, Vitoria Rabelo, Mariana Arcelino, Priscila Holanda">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kaio Pereira, Alessy Kaua, Vitoria Rabelo, Mariana Arcelino, Priscila Holanda">
 
-        <title>NutriTrack - Evolução de Clientes</title>
+    <title>NutriTrack - Evolução de Clientes</title>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-        <link rel="stylesheet" href="../assets/css/evolucao.css">
-        <link rel="stylesheet" href="../assets/css/evolucao_nutri.css">
-    </head>
-    <body>
-        <aside class="sidebar">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/evolucao.css">
+    <link rel="stylesheet" href="../assets/css/evolucao_nutri.css">
+    <link rel="icon" type="image/png" href="../assets/image/icon-logo.png">
+</head>
 
-            <div class="nav-logo">
-                <img src="../assets/image/logo.png" alt="Logo NutriTrack" class="img-logo">
-                <p class="logo-text">Nutricionista</p>
-            </div>
+<body>
+    <aside class="sidebar">
 
-            <nav class="navbar">
+        <div class="nav-logo">
+            <img src="../assets/image/logo.png" alt="Logo NutriTrack" class="img-logo">
+            <p class="logo-text">Nutricionista</p>
+        </div>
+
+        <nav class="navbar">
 
             <div class="nav-items">
 
@@ -46,196 +48,212 @@
 
             </div>
 
-            </nav>
+        </nav>
 
-            <div class="nav-exit">
+        <div class="nav-exit">
 
-                <a class="exit" href="../index.html">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    Sair
-                </a>
+            <a class="exit" href="../index.html">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Sair
+            </a>
+
+        </div>
+
+    </aside>
+
+    <main class="content">
+        <header class="page-header">
+            <div class="header-title-group">
+                <h1 class="title-text">Evolução de Clientes</h1>
+                <p class="welcome-text">Selecione um paciente para ver o progresso</p>
+            </div>
+            <div class="user-top-profile">
+                <div class="user-top-text">
+                    <span class="user-top-name">Dra. Maria Silva</span>
+                    <span class="user-top-since">CRN: 12345</span>
+                </div>
+                <div class="user-top-avatar">DM</div>
+            </div>
+        </header>
+        <div class="evolution-content">
+            <div class="evolution-container">
+                <div class="selection-card">
+                    <label for="paciente">Selecione o Paciente</label>
+                    <select id="paciente" class="patient-select">
+                        <option>João Silva</option>
+                        <option>Ana Farias</option>
+                    </select>
+                </div>
+
+                <div class="stats-grid-cards">
+                    <div class="stat-card">
+                        <span>Peso Inicial</span>
+                        <strong class="txt-black">85 kg</strong>
+                    </div>
+                    <div class="stat-card">
+                        <span>Peso Atual</span>
+                        <strong class="txt-blue">82 kg</strong>
+                    </div>
+                    <div class="stat-card">
+                        <span>Peso Perdido</span>
+                        <strong class="txt-green">3 kg</strong>
+                    </div>
+                    <div class="stat-card">
+                        <span>Meta</span>
+                        <strong class="txt-purple">75 kg</strong>
+                    </div>
+                </div>
+
+                <div class="progress-card">
+                    <div class="progress-info">
+                        <h3>Progresso para Meta</h3>
+                        <span class="pct-concluido">30% concluído</span>
+                    </div>
+                    <p class="txt-missing">Falta 7 kg para atingir a meta</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill" style="width: 30%;"></div>
+                    </div>
+                </div>
 
             </div>
-
-        </aside>
-
-        <main class="content">
-            <header class="page-header">
-                <div class="header-title-group">
-                    <h1 class="title-text">Evolução de Clientes</h1>
-                    <p class="welcome-text">Selecione um paciente para ver o progresso</p>
-                </div>
-                <div class="user-top-profile">
-                    <div class="user-top-text">
-                        <span class="user-top-name">Dra. Maria Silva</span>
-                        <span class="user-top-since">CRN: 12345</span>
-                    </div>
-                    <div class="user-top-avatar">DM</div>
-                </div>
-            </header>
-            <div class="evolution-content">
-                <div class="evolution-container">
-                    <div class="selection-card">
-                        <label for="paciente">Selecione o Paciente</label>
-                        <select id="paciente" class="patient-select">
-                            <option>João Silva</option>
-                            <option>Ana Farias</option>
-                        </select>
-                    </div>
-
-                    <div class="stats-grid-cards">
-                        <div class="stat-card">
-                            <span>Peso Inicial</span>
-                            <strong class="txt-black">85 kg</strong>
-                        </div>
-                        <div class="stat-card">
-                            <span>Peso Atual</span>
-                            <strong class="txt-blue">82 kg</strong>
-                        </div>
-                        <div class="stat-card">
-                            <span>Peso Perdido</span>
-                            <strong class="txt-green">3 kg</strong>
-                        </div>
-                        <div class="stat-card">
-                            <span>Meta</span>
-                            <strong class="txt-purple">75 kg</strong>
-                        </div>
-                    </div>
-
-                    <div class="progress-card">
-                        <div class="progress-info">
-                            <h3>Progresso para Meta</h3>
-                            <span class="pct-concluido">30% concluído</span>
-                        </div>
-                        <p class="txt-missing">Falta 7 kg para atingir a meta</p>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar-fill" style="width: 30%;"></div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="evolution-section">
-                    <div class="section-header">
-                        <h2>Histórico de Evolução</h2>
-                        <button class="btn-adicionar-tabela"><i class="fa-solid fa-plus"></i> Adicionar Medição</button>
-                    </div>
-                    
-                    <div class="table-container">
-                        <table class="history-table">
-                            <thead>
-                                <tr>
-                                    <th>Data</th>
-                                    <th>Peso (kg)</th>
-                                    <th>Cintura (cm)</th>
-                                    <th>Quadril (cm)</th>
-                                    <th>Variação</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>15/01/2026</td>
-                                    <td><strong>85 kg</strong></td>
-                                    <td>95 cm</td>
-                                    <td>105 cm</td>
-                                    <td class="txt-gray">Inicial</td>
-                                </tr>
-                                <tr>
-                                    <td>01/02/2026</td>
-                                    <td><strong>84 kg</strong></td>
-                                    <td>94 cm</td>
-                                    <td>104 cm</td>
-                                    <td class="txt-green">↓ 1.0 kg</td>
-                                </tr>
-                                <tr>
-                                    <td>01/03/2026</td>
-                                    <td><strong>83 kg</strong></td>
-                                    <td>92 cm</td>
-                                    <td>102 cm</td>
-                                    <td class="txt-green">↓ 1.0 kg</td>
-                                </tr>
-                                <tr>
-                                    <td>01/04/2026</td>
-                                    <td><strong>82 kg</strong></td>
-                                    <td>90 cm</td>
-                                    <td>100 cm</td>
-                                    <td class="txt-green">↓ 1.0 kg</td>
-                                </tr>
-                                <tr>
-                                    <td>15/04/2026</td>
-                                    <td><strong>81.5 kg</strong></td>
-                                    <td>89 cm</td>
-                                    <td>99 cm</td>
-                                    <td class="txt-green">↓ 0.5 kg</td>
-                                </tr>
-                                <tr>
-                                    <td>01/05/2026</td>
-                                    <td><strong>81 kg</strong></td>
-                                    <td>88 cm</td>
-                                    <td>98 cm</td>
-                                    <td class="txt-green">↓ 0.5 kg</td>
-                                </tr>
-                                <tr>
-                                    <td>10/05/2026</td>
-                                    <td><strong>80.5 kg</strong></td>
-                                    <td>87.5 cm</td>
-                                    <td>97.5 cm</td>
-                                    <td class="txt-green">↓ 0.5 kg</td>
-                                </tr>
-                                </tbody>
-                        </table>
-                    </div>
+            <div class="evolution-section">
+                <div class="section-header">
+                    <h2>Histórico de Evolução</h2>
+                    <button class="btn-adicionar-tabela"><i class="fa-solid fa-plus"></i> Adicionar Medição</button>
                 </div>
 
-                <div class="evolution-section">
-                    <h2>Resumo de Todos os Pacientes</h2>
-                    <div class="patients-summary-grid">
-                        <div class="mini-patient-card active-border">
-                            <div class="mini-card-header">
-                                <div class="mini-avatar">J</div>
-                                <div>
-                                    <h4>João Silva</h4>
-                                    <span>Meta: 75 kg</span>
-                                </div>
-                            </div>
-                            <div class="mini-card-stats">
-                                <div class="stat-box-mini bg-green-light">
-                                    <label>Perdeu</label>
-                                    <span class="txt-green">3 kg</span>
-                                </div>
-                                <div class="stat-box-mini bg-blue-light">
-                                    <label>Atual</label>
-                                    <span class="txt-blue">82 kg</span>
-                                </div>
+                <div class="table-container">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Peso (kg)</th>
+                                <th>Cintura (cm)</th>
+                                <th>Quadril (cm)</th>
+                                <th>Variação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>15/01/2026</td>
+                                <td><strong>85 kg</strong></td>
+                                <td>95 cm</td>
+                                <td>105 cm</td>
+                                <td class="txt-gray">Inicial</td>
+                            </tr>
+                            <tr>
+                                <td>01/02/2026</td>
+                                <td><strong>84 kg</strong></td>
+                                <td>94 cm</td>
+                                <td>104 cm</td>
+                                <td class="txt-green">↓ 1.0 kg</td>
+                            </tr>
+                            <tr>
+                                <td>01/03/2026</td>
+                                <td><strong>83 kg</strong></td>
+                                <td>92 cm</td>
+                                <td>102 cm</td>
+                                <td class="txt-green">↓ 1.0 kg</td>
+                            </tr>
+                            <tr>
+                                <td>01/04/2026</td>
+                                <td><strong>82 kg</strong></td>
+                                <td>90 cm</td>
+                                <td>100 cm</td>
+                                <td class="txt-green">↓ 1.0 kg</td>
+                            </tr>
+                            <tr>
+                                <td>15/04/2026</td>
+                                <td><strong>81.5 kg</strong></td>
+                                <td>89 cm</td>
+                                <td>99 cm</td>
+                                <td class="txt-green">↓ 0.5 kg</td>
+                            </tr>
+                            <tr>
+                                <td>01/05/2026</td>
+                                <td><strong>81 kg</strong></td>
+                                <td>88 cm</td>
+                                <td>98 cm</td>
+                                <td class="txt-green">↓ 0.5 kg</td>
+                            </tr>
+                            <tr>
+                                <td>10/05/2026</td>
+                                <td><strong>80.5 kg</strong></td>
+                                <td>87.5 cm</td>
+                                <td>97.5 cm</td>
+                                <td class="txt-green">↓ 0.5 kg</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="evolution-section">
+                <h2>Resumo de Todos os Pacientes</h2>
+                <div class="patients-summary-grid">
+                    <div class="mini-patient-card active-border">
+                        <div class="mini-card-header">
+                            <div class="mini-avatar">J</div>
+                            <div>
+                                <h4>João Silva</h4>
+                                <span>Meta: 75 kg</span>
                             </div>
                         </div>
-
-                        <div class="mini-patient-card">
-                            <div class="mini-card-header">
-                                <div class="mini-avatar bg-alt">A</div>
-                                <div>
-                                    <h4>Ana Santos</h4>
-                                    <span>Meta: 70 kg</span>
-                                </div>
+                        <div class="mini-card-stats">
+                            <div class="stat-box-mini bg-green-light">
+                                <label>Perdeu</label>
+                                <span class="txt-green">3 kg</span>
                             </div>
-                            <div class="mini-card-stats">
-                                <div class="stat-box-mini bg-green-light">
-                                    <label>Perdeu</label>
-                                    <span class="txt-green">0 kg</span>
-                                </div>
-                                <div class="stat-box-mini bg-blue-light">
-                                    <label>Atual</label>
-                                    <span class="txt-blue">68 kg</span>
-                                </div>
+                            <div class="stat-box-mini bg-blue-light">
+                                <label>Atual</label>
+                                <span class="txt-blue">82 kg</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mini-patient-card">
+                        <div class="mini-card-header">
+                            <div class="mini-avatar bg-alt">A</div>
+                            <div>
+                                <h4>Ana Santos</h4>
+                                <span>Meta: 70 kg</span>
+                            </div>
+                        </div>
+                        <div class="mini-card-stats">
+                            <div class="stat-box-mini bg-green-light">
+                                <label>Perdeu</label>
+                                <span class="txt-green">0 kg</span>
+                            </div>
+                            <div class="stat-box-mini bg-blue-light">
+                                <label>Atual</label>
+                                <span class="txt-blue">68 kg</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
+        </div>
+    </main>
 
-        <footer class="footer">
-        </footer>
+    <nav class="bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <i class="fa-regular fa-clipboard"></i>
+            <span>Início</span>
+        </a>
+        <a href="agendamento.html" class="nav-item">
+            <i class="fa-solid fa-calendar"></i>
+            <span>Agenda</span>
+        </a>
+        <a href="plano_alimentar_nutri.html" class="nav-item">
+            <i class="fa-solid fa-clipboard-list"></i>
+            <span>Planos</span>
+        </a>
+        <a href="evolucao_nutri.html" class="nav-item active">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Evolução</span>
+        </a>
+    </nav>
 
-    </body>
+</body>
 
 </html>

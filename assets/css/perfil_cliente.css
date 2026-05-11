@@ -543,3 +543,146 @@ main {
     font-size: 14px;
     color: #364153;
 }
+
+.bottom-nav {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .bottom-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background-color: #ffffff;
+        border-top: 1px solid #e5e7eb;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 1000;
+        padding-bottom: 5px;
+    }
+
+    .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: #718096;
+        font-size: 12px;
+        gap: 4px;
+    }
+
+    .nav-item i {
+        font-size: 20px;
+    }
+
+    .nav-item.active {
+        color: #00a843;
+        background-color: #e1fbed;
+        padding: 8px 15px;
+        border-radius: 12px;
+    }
+
+    main {
+        padding-bottom: 80px;
+    }
+    
+    .page-header {
+        padding: 16px;
+        gap: 15px;
+    }
+
+    .user-top-text {
+        align-items: center;
+    }
+
+    .main-container {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 24px 16px;
+        gap: 20px;
+    }
+
+    .profile-info {
+        align-items: center;
+    }
+
+    .profile-name {
+        font-size: 26px;
+    }
+
+    /* 4. Informações Pessoais e Grid de Formulário */    .inf-per-header {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr; 
+        gap: 16px;
+    }
+
+    .btn-edit {
+        width: 100%; 
+    }
+
+    .content-sumary {
+        flex-direction: column; 
+        gap: 12px;
+    }
+
+    .health-card-peso, 
+    .health-card-altura, 
+    .health-card-imc {
+        width: 100%; 
+    }
+
+    .peso-value, .altura-value, .imc-value {
+        font-size: 24px;
+    }
+
+  
+    .history-container {
+        flex-wrap: wrap; 
+        gap: 10px;
+    }
+
+    .history-subtitle {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-text {
+        font-size: 16px;
+    }
+
+    .welcome-text{
+        font-size: 14px;
+    }
+
+    .profile-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .initials {
+        font-size: 32px;
+    }
+
+    .input-icon input {
+        font-size: 14px;
+    }
+}

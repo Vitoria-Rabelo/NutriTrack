@@ -467,12 +467,14 @@ html {
     font-size: 16px;
 }
 
-.form-group input:focus, .form-group textarea:focus {
+.form-group input:focus,
+.form-group textarea:focus {
     outline: none;
     border-color: #00a843;
 }
 
-.form-group input::placeholder, .form-group textarea::placeholder {
+.form-group input::placeholder,
+.form-group textarea::placeholder {
     color: #a0aec0;
 }
 
@@ -491,8 +493,8 @@ html {
     background-color: #008f39;
 }
 
-.footer{
-    background-color: #101828; 
+.footer {
+    background-color: #101828;
     padding: 40px 0;
     color: #ffffff;
     text-align: center;
@@ -523,5 +525,99 @@ html {
     color: #a0aec0;
 }
 
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 10px 20px;
+    }
 
+    .nav-links {
+        gap: 20px;
+        font-size: 15px;
+    }
 
+    .home-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-image-container {
+        width: 100%;
+        padding: 65px 0;
+    }
+
+    .home-image {
+        width: 90px;
+    }
+
+    .especialidades-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contato-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .home-title {
+        font-size: 32px;
+    }
+
+    .home-description {
+        font-size: 18px;
+    }
+
+    .home-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sobre-cards,
+    .publico-cards {
+        flex-direction: column;
+    }
+
+    .especialidades-cards {
+        grid-template-columns: 1fr;
+    }
+
+    #especialidades,
+    #contato,
+    #publico {
+        padding: 40px 20px;
+    }
+
+    .contato-info,
+    .contato-form {
+        padding: 25px;
+    }
+
+    .sobre-title,
+    .especialidades-title,
+    .publico-title,
+    .contato-title {
+        font-size: 28px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        max-height: 40px;
+    }
+
+    .btn-nav {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
