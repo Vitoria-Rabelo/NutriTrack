@@ -1,0 +1,10 @@
+node_modules/
+api/node_modules/
+
+api/repositories/firebaseConfig.js
+
+npm-debug.log*
+yarn-error.log*
+
+.vscode/
+.DS_Store

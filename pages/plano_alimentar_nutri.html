@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Kaio Pereira, Alessy Kaua, Vitoria Rabelo, Mariana Arcelino, Priscila Holanda">
-    <title>NutriTrack - Meu Perfil</title>
+    <title>NutriTrack - Criar Plano</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" type="image/png" href="../assets/image/icon-logo.png">
     <link rel="stylesheet" href="../assets/css/styles.css" />
@@ -14,38 +14,30 @@
 
 <body>
     <aside class="sidebar">
-        
         <figure class="nav-logo">
             <img src="../assets/image/logo.png" alt="Logo NutriTrack" class="img-logo">
             <figcaption class="logo-text">Nutricionista</figcaption>
         </figure>
 
         <nav class="navbar">
-
             <div class="nav-items">
-
                 <a href="dashboard.html">
                     <i class="fa-regular fa-clipboard"></i>
                     Dashboard
                 </a>
-
                 <a href="agendamento.html">
                     <i class="fa-solid fa-calendar"></i>
                     Agendamentos
                 </a>
-
                 <a href="plano_alimentar_nutri.html" class="active">
                     <i class="fa-solid fa-clipboard-list"></i>
                     Planos Alimentares
                 </a>
-
                 <a href="evolucao_nutri.html">
                     <i class="fa-solid fa-chart-line"></i>
                     Evolução Clientes
                 </a>
-
             </div>
-
         </nav>
 
         <div class="nav-exit">
@@ -73,83 +65,60 @@
             <div class="stat-card">
                 <strong><span class="label">Criar Plano Alimentar</span></strong>
                 <span class="value">Selecione o Paciente</span>
-                <select class="select" name="pacientes" id="pacientes" value="default">
+                <select class="select" name="pacientes" id="pacientes">
                     <option value="default">Escolha um paciente</option>
-                    <option value="paciente01">Paciente 01</option>
-                    <option value="paciente02">Paciente 02</option>
-                    <option value="paciente03">Paciente 03</option>
-                    <option value="paciente04">Paciente 04</option>
+                    <option value="joao_silva">João Silva</option>
+                    <option value="ana_santos">Ana Santos</option>
+                    <option value="carlos_oliveira">Carlos Oliveira</option>
+                    <option value="marina_costa">Marina Costa</option>
                 </select>
-            </div>
-        </div>
 
-        <div class="card-container">
-            <div class="plans-card">
-                <strong><span class="label">Planos Alimentares Criados</span></strong>
-                <div class="grid-container">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="user-top-avatar">J</div>
-                            <div class="info">
-                                <span class="plan-label">João Silva</span>
-                                <span class="plan-value">Última atualização: 25/04/2026</span>                            
-                            </div>
-                        </div>
-
-                        <div class="buttons">
-                            <button class="btn-view">Ver Plano</button>
-                            <button class="btn-edit">Editar</button>
-                        </div>
-                    </div>
+                <div id="form-container" style="display: none;">
                     
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="user-top-avatar">A</div>
-                            <div class="info">
-                                <span class="plan-label">Ana Santos</span>
-                                <span class="plan-value">Última atualização: 25/04/2026</span>                            
-                            </div>
+                    <form id="form-plano-alimentar">
+                        <div class="plano-header-paciente bg-green-main">
+                            <h2 id="nome-paciente-display">Plano para: Nome do Paciente</h2>
+                            <p>Preencha as refeições abaixo</p>
                         </div>
 
-                        <div class="buttons">
-                            <button class="btn-view">Ver Plano</button>
-                            <button class="btn-edit">Editar</button>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="user-top-avatar">C</div>
-                            <div class="info">
-                                <span class="plan-label">Carlos Oliveira</span>
-                                <span class="plan-value">Última atualização: 25/04/2026</span>                            
-                            </div>
+                        <div class="meal-group">
+                            <div class="meal-header bg-orange">Café da Manhã</div>
+                            <textarea class="meal-textarea" name="cafe_manha" placeholder="Ex: 2 fatias de pão integral, 2 ovos..."></textarea>
                         </div>
 
-                        <div class="buttons">
-                            <button class="btn-view">Ver Plano</button>
-                            <button class="btn-edit">Editar</button>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="user-top-avatar">M</div>
-                            <div class="info">
-                                <span class="plan-label">Marina Costa</span>
-                                <span class="plan-value">Última atualização: 25/04/2026</span>                            
-                            </div>
+                        <div class="meal-group">
+                            <div class="meal-header bg-yellow">Lanche da Manhã</div>
+                            <textarea class="meal-textarea" name="lanche_manha" placeholder="Ex: 1 maçã, 1 iogurte natural..."></textarea>
                         </div>
 
-                        <div class="buttons">
-                            <button class="btn-view">Ver Plano</button>
-                            <button class="btn-edit">Editar</button>
+                        <div class="meal-group">
+                            <div class="meal-header bg-green-light">Almoço</div>
+                            <textarea class="meal-textarea" name="almoco" placeholder="Ex: 2 colheres de arroz, 1 concha de feijão, 1 filé de frango..."></textarea>
                         </div>
-                    </div>
+
+                        <div class="meal-group">
+                            <div class="meal-header bg-blue">Lanche da Tarde</div>
+                            <textarea class="meal-textarea" name="lanche_tarde" placeholder="Ex: 1 fatia de mamão com aveia..."></textarea>
+                        </div>
+
+                        <div class="meal-group">
+                            <div class="meal-header bg-magenta">Jantar</div>
+                            <textarea class="meal-textarea" name="jantar" placeholder="Ex: Salada à vontade, 1 filé de peixe..."></textarea>
+                        </div>
+
+                        <div class="meal-group border-purple">
+                            <div class="meal-header bg-purple">Ceia</div>
+                            <textarea class="meal-textarea" name="ceia" placeholder="Ex: 1 xícara de chá de camomila..."></textarea>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button type="button" class="btn-cancel" id="btn-cancelar">Cancelar</button>
+                            <button type="submit" class="btn-save">Salvar Plano</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-
     </main>
 
     <nav class="bottom-nav">
@@ -170,6 +139,35 @@
             <span>Evolução</span>
         </a>
     </nav>
-    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const selectPaciente = document.getElementById('pacientes');
+            const formContainer = document.getElementById('form-container');
+            const nomeDisplay = document.getElementById('nome-paciente-display');
+            const btnCancelar = document.getElementById('btn-cancelar');
+            const formPlano = document.getElementById('form-plano-alimentar');
+
+            // Mostrar formulário
+            selectPaciente.addEventListener('change', (e) => {
+                const selectedValue = e.target.value;
+                const selectedText = e.target.options[e.target.selectedIndex].text;
+
+                if (selectedValue !== 'default') {
+                    nomeDisplay.textContent = `Plano para: ${selectedText}`;
+                    formContainer.style.display = 'block';
+                } else {
+                    formContainer.style.display = 'none';
+                }
+            });
+
+            // Cancelar o envio
+            btnCancelar.addEventListener('click', () => {
+                selectPaciente.value = 'default';
+                formContainer.style.display = 'none';
+                formPlano.reset();
+            });
+        });
+    </script>
 </body>
 </html>

@@ -183,3 +183,121 @@ body {
         padding-bottom: 90px;
     }
 }
+
+/* CSS do formulário de plano do paciente */
+#form-container {
+    margin-top: 25px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.plano-header-paciente {
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.plano-header-paciente h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.plano-header-paciente p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.meal-group {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden; 
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.02);
+}
+
+.border-purple {
+    border: 1px solid #8e24aa;
+}
+
+.meal-header {
+    padding: 12px 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.meal-textarea {
+    width: 100%;
+    min-height: 80px;
+    border: none;
+    padding: 15px 20px;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    color: #4a4a4a;
+}
+
+.meal-textarea::placeholder {
+    color: #b0b0b0;
+}
+
+.bg-green-main { background-color: #00c853; }
+.bg-orange { background-color: #f4511e; }
+.bg-yellow { background-color: #d4a000; }
+.bg-green-light { background-color: #00e676; }
+.bg-blue { background-color: #5e35b1; }
+.bg-magenta { background-color: #aa00ff; }
+.bg-purple { background-color: #7b1fa2; }
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-cancel {
+    flex: 1;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    background-color: white;
+    color: #4b5563;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-cancel:hover {
+    background-color: #f3f4f6;
+}
+
+.btn-save {
+    flex: 1;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: #00c853;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-save:hover {
+    background-color: #00a843;
+}
+
+@media (max-width: 768px) {
+    .action-buttons {
+        flex-direction: column;
+    }
+}
