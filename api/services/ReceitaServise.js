@@ -6,16 +6,14 @@ class ReceitaService {
         try {
             const todasReceitas = await ReceitaRepository.listarTodas();
             
-            if (!categoria || categoria === 'todas') {
+            if (!categoria || categoria === 'Todas') {
                 return todasReceitas;
             }
 
             const receitasFiltradas = todasReceitas.filter(receita => {
-                return receita.categoria && receita.categoria === categoria;
+                return receita.categoria === categoria;
             });
-            
             return receitasFiltradas;
-
         } catch (error) {
             console.error("Erro no serviço ao filtrar receitas:", error);
             throw error;
