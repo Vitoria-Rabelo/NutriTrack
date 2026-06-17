@@ -20,10 +20,19 @@ class PacienteService {
         return idGerado; 
     }
 
+    async atualizarPlano(id, planoAlimentar) {
+        if (!id) {
+            throw new Error("O Id é obrigatório para atualizar o plano.");
+        }
+        await pacienteRepository.atualizarPlano(id, planoAlimentar);
+        return true;
+    }
+
     async listarTodos() {
         const pacientes = await pacienteRepository.listarTodos();
         return pacientes;
     }
+
 }
 
 module.exports = new PacienteService();

@@ -1,4 +1,4 @@
-const { collection, addDoc, getDocs } = require("firebase/firestore");
+const { collection, addDoc, getDocs, doc, updateDoc } = require("firebase/firestore");
 const db = require("./firebaseConfig");
 
 class PacienteRepository {
@@ -35,6 +35,19 @@ class PacienteRepository {
             console.log("Erro ao listar pacientes:", error)
             throw error;
         }
+    }
+
+    async atualizarPlano(id, planoAlimentar) {
+        try {
+            const pacienteRef = doc(this.collectionRef, id);
+
+            await updateDoc(pacienteRef, { planoAlimentar: planoAlimentar });
+            return true;
+        } catch (error) {
+            console.error("Nao foi possível atualizar o plano:", error);
+            throw error;
+        }
+        
     }
 }
 

@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const routerPaciente = require("./routers/PacienteRouter");
 const routerReceita = require("./routers/ReceitaRouter");
 
@@ -8,6 +9,7 @@ const swaggerDocument = require("./swagger.json")
 const app = express();
 const port = 3000;
 
+app.use(cors());
 app.use(express.json());
 app.use("/api/pacientes", routerPaciente);
 app.use("/api/receitas", routerReceita);
