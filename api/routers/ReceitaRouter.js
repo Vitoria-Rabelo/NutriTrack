@@ -24,4 +24,20 @@ router.get(
     }
 );
 
+router.post(
+    "/",
+    express.json(),
+    async (request, response) => {
+        try {
+            const novoId = await receitaService.adicionar(request.body);
+            response.status(201).json({ 
+                msg: "Receita adicionada com sucesso!", 
+                id: novoId 
+            });
+        } catch (error) {
+            response.status(400).json({ erro: error.message });
+        }
+    }
+);
+
 module.exports = router;

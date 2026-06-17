@@ -1,0 +1,93 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "NutriTrack API",
+    "version": "1.0.0",
+    "description": "Documentação interativa das rotas do ecossistema NutriTrack"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Servidor Local"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Pacientes",
+      "description": "Gerenciamento de pacientes e planos alimentares"
+    },
+    {
+      "name": "Receitas",
+      "description": "Gerenciamento do catálogo de receitas"
+    }
+  ],
+  "paths": {
+    "/api/pacientes": {
+      "get": {
+        "tags": ["Pacientes"],
+        "summary": "Lista todos os pacientes cadastrados",
+        "description": "Retorna um array com todos os documentos de pacientes vindos do Firestore.",
+        "responses": {
+          "200": { "description": "Lista de pacientes retornada com sucesso." }
+        }
+      },
+      "post": {
+        "tags": ["Pacientes"],
+        "summary": "Cria um novo paciente com seu plano alimentar",
+        "description": "Envia os dados do paciente para a coleção do Firestore.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": { "type": "string", "example": "João Silva" },
+                  "planoAlimentar": { "type": "object" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Paciente adicionado com sucesso!" }
+        }
+      }
+    },
+    "/api/receitas": {
+      "get": {
+        "tags": ["Receitas"],
+        "summary": "Lista todas as receitas cadastradas",
+        "description": "Retorna um array com as receitas do Firebase.",
+        "responses": {
+          "200": { "description": "Lista retornada com sucesso." }
+        }
+      },
+      "post": {
+        "tags": ["Receitas"],
+        "summary": "Cria uma nova receita",
+        "description": "Adiciona uma nova receita ao catálogo.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "titulo": { "type": "string", "example": "Panqueca de Banana Proteica" },
+                  "descricao": { "type": "string", "example": "Lorem ipsum dolor sit amet..." },
+                  "tempoPreparo": { "type": "string", "example": "15 minutos" },
+                  "imagem": { "type": "string", "example": "https://images.unsplash.com/photo-exemplo" },
+                  "categoria": { "type": "string", "example": "Café da Manhã" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Receita adicionada com sucesso!" }
+        }
+      }
+    }
+  }
+}

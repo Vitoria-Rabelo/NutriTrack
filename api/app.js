@@ -2,11 +2,17 @@ const express = require("express");
 const routerPaciente = require("./routers/PacienteRouter");
 const routerReceita = require("./routers/ReceitaRouter");
 
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require("./swagger.json")
+
 const app = express();
 const port = 3000;
 
+app.use(express.json());
 app.use("/api/pacientes", routerPaciente);
 app.use("/api/receitas", routerReceita);
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use((request, response) => {
     response.status(404).json({ erro: "Rota inválida." });
@@ -14,9 +20,5 @@ app.use((request, response) => {
 
 app.listen(port, () => {
     console.log(`API executando na porta ${port}`);
-    console.log(`Rotas disponíveis:`);
-    console.log(`- GET  http://localhost:${port}/api/pacientes`);
-    console.log(`- POST http://localhost:${port}/api/pacientes`);
-    console.log(`- GET  http://localhost:${port}/api/receitas`);
-    console.log(`- GET  http://localhost:${port}/api/receitas?categoria=NomeDaCategoria`);
+    console.log(`Documentação disponível em: http://localhost:${port}/api-docs`)
 });

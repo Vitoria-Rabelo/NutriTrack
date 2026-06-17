@@ -1,9 +1,9 @@
-const { collection, getDocs } = require("firebase/firestore");const db = require("./firebaseConfig");
+const { collection, getDocs, addDoc } = require("firebase/firestore");
 const db = require("./firebaseConfig");
 
 class ReceitaRepository {
     constructor() {
-        this.collectionRef = collection(db, "receita");
+        this.collectionRef = collection(db, "receitas");
     }
 
     async listarTodas(categoria = null) {
@@ -21,6 +21,16 @@ class ReceitaRepository {
 
         } catch (error) {
             console.log("Erro ao listar receitas:", error);
+            throw error;
+        }
+    }
+
+    async adicionar(receitaData) {
+        try {
+            const docRef = await addDoc(this.collectionRef, receitaData);
+            return docRef.id;
+        } catch (error) {
+            console.error("Erro ao inserir receita:", error)
             throw error;
         }
     }

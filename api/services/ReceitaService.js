@@ -1,4 +1,5 @@
 const ReceitaRepository = require('../repositories/ReceitaRepository');
+const ReceitaModel = require("../models/ReceitaModel");
 
 class ReceitaService {
 
@@ -18,6 +19,34 @@ class ReceitaService {
             console.error("Erro no serviço ao filtrar receitas:", error);
             throw error;
         }
+    }
+
+    async adicionar(dadosRecebidos) {
+        if (!dadosRecebidos.titulo || !dadosRecebidos.categoria) {
+            throw new Error("O título e a categoria da receita são obrigatórios!");
+        }
+
+        const novaReceita = new ReceitaModel(
+            null, 
+            dadosRecebidos.titulo,
+            dadosRecebidos.descricao,
+            dadosRecebidos.tempoPreparo,
+            dadosRecebidos.imagem,
+            dadosRecebidos.categoria
+        );
+
+        const receitaParaSalvar = {
+            titulo: novaReceita.titulo,
+            descricao: novaReceita.descricao,
+            tempoPreparo: novaReceita.tempoPreparo,
+            imagem: novaReceita.imagem,
+            categoria: novaReceita.categoria
+        };
+
+
+
+        const idGerado = await ReceitaRepository.adicionar(receitaParaSalvar);
+        return idGerado;
     }
 }
 
