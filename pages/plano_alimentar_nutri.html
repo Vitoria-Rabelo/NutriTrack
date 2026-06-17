@@ -66,12 +66,7 @@
                 <strong><span class="label">Criar Plano Alimentar</span></strong>
                 <span class="value">Selecione o Paciente</span>
                 <select class="select" name="pacientes" id="pacientes">
-                    <option value="default">Escolha um paciente</option>
-                    <option value="joao_silva">João Silva</option>
-                    <option value="ana_santos">Ana Santos</option>
-                    <option value="carlos_oliveira">Carlos Oliveira</option>
-                    <option value="marina_costa">Marina Costa</option>
-                </select>
+                    </select>
 
                 <div id="form-container" style="display: none;">
                     
@@ -148,20 +143,56 @@
             const btnCancelar = document.getElementById('btn-cancelar');
             const formPlano = document.getElementById('form-plano-alimentar');
 
-            // Mostrar formulário
-            selectPaciente.addEventListener('change', (e) => {
-                const selectedValue = e.target.value;
-                const selectedText = e.target.options[e.target.selectedIndex].text;
+            let pacientesGlobais = [];
 
-                if (selectedValue !== 'default') {
-                    nomeDisplay.textContent = `Plano para: ${selectedText}`;
+            async function carregarPacientes() {
+                try {
+                    const resposta = await fetch('http://localhost:3000/api/pacientes');
+                    pacientesGlobais = await resposta.json();
+
+                    // Opção padrão
+                    selectPaciente.innerHTML = '<option value="default">Escolha um paciente</option>';
+
+                    // Popula o select
+                    pacientesGlobais.forEach(paciente => {
+                        const option = document.createElement('option');
+                        option.value = paciente.id;
+                        option.textContent = paciente.nome;
+                        selectPaciente.appendChild(option);
+                    });
+                } catch (erro) {
+                    console.error("Erro ao carregar os pacientes:", erro);
+                    alert("Falha ao carregar a lista de pacientes.");
+                }
+            }
+
+            carregarPacientes();
+
+            selectPaciente.addEventListener('change', (e) => {
+                const selectedId = e.target.value;
+
+                if (selectedId !== 'default') {
+                    const pacienteSelecionado = pacientesGlobais.find(p => p.id === selectedId);
+
+                    nomeDisplay.textContent = `Plano para: ${pacienteSelecionado.nome}`;
                     formContainer.style.display = 'block';
+
+                    const plano = pacienteSelecionado.planoAlimentar || {};
+
+                    document.querySelector('[name="cafe_manha"]').value = plano.cafeManha || '';
+                    document.querySelector('[name="lanche_manha"]').value = plano.lancheManha || '';
+                    document.querySelector('[name="almoco"]').value = plano.almoco || '';
+                    document.querySelector('[name="lanche_tarde"]').value = plano.lancheTarde || '';
+                    document.querySelector('[name="jantar"]').value = plano.jantar || '';
+                    document.querySelector('[name="ceia"]').value = plano.ceia || '';
+
                 } else {
                     formContainer.style.display = 'none';
+                    formPlano.reset();
                 }
             });
 
-            // Cancelar o envio
+            // Botão de cancelar
             btnCancelar.addEventListener('click', () => {
                 selectPaciente.value = 'default';
                 formContainer.style.display = 'none';

@@ -218,7 +218,12 @@ body {
     border-radius: 10px;
     margin-bottom: 20px;
     overflow: hidden; 
-    box-shadow: 0px 2px 4px rgba(0,0,0,0.02);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08); 
+    transition: box-shadow 0.3s ease;
+}
+
+.meal-group:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .border-purple {
