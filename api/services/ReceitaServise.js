@@ -1,13 +1,23 @@
-const receitaRepository = require("../repositories/ReceitaRepository");
-const { ReceitaModel } = require("../models/ReceitaModel");
+const ReceitaRepository = require('../repositories/ReceitaRepository');
 
 class ReceitaService {
-    async buscarTodasAsReceitas() {
+
+    async buscarTodas(categoria = null) {
         try {
-            const receitas = await ReceitaRepository.listarTodas();
-            return receitas;
+            const todasReceitas = await ReceitaRepository.listarTodas();
+            
+            if (!categoria || categoria === 'todas') {
+                return todasReceitas;
+            }
+
+            const receitasFiltradas = todasReceitas.filter(receita => {
+                return receita.categoria && receita.categoria === categoria;
+            });
+            
+            return receitasFiltradas;
+
         } catch (error) {
-            console.error("Erro no serviço ao buscar receitas:", error);
+            console.error("Erro no serviço ao filtrar receitas:", error);
             throw error;
         }
     }

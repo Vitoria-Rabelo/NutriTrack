@@ -6,7 +6,7 @@ class ReceitaRepository {
         this.collectionRef = collection(db, "receita");
     }
 
-    async listarTodas() {
+    async listarTodas(categoria = null) {
         try {
             const snapshot = await getDocs(this.collectionRef);
             const receitas = [];
