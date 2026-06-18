@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const routerPaciente = require("./routers/PacienteRouter");
 const routerReceita = require("./routers/ReceitaRouter");
+const routerAgendamento = require("./routers/AgendamentoRouter");
 
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./swagger.json")
@@ -13,6 +14,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/pacientes", routerPaciente);
 app.use("/api/receitas", routerReceita);
+app.use("/api/agendamentos", routerAgendamento);
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
@@ -24,3 +26,5 @@ app.listen(port, () => {
     console.log(`API executando na porta ${port}`);
     console.log(`Documentação disponível em: http://localhost:${port}/api-docs`)
 });
+
+

@@ -19,20 +19,30 @@
     {
       "name": "Receitas",
       "description": "Gerenciamento do catálogo de receitas"
+    },
+    {
+      "name": "Agendamentos",
+      "description": "Gerenciamento de consultas e agendamentos"
     }
   ],
   "paths": {
     "/api/pacientes": {
       "get": {
-        "tags": ["Pacientes"],
+        "tags": [
+          "Pacientes"
+        ],
         "summary": "Lista todos os pacientes cadastrados",
         "description": "Retorna um array com todos os documentos de pacientes vindos do Firestore.",
         "responses": {
-          "200": { "description": "Lista de pacientes retornada com sucesso." }
+          "200": {
+            "description": "Lista de pacientes retornada com sucesso."
+          }
         }
       },
       "post": {
-        "tags": ["Pacientes"],
+        "tags": [
+          "Pacientes"
+        ],
         "summary": "Cria um novo paciente com seu plano alimentar",
         "description": "Envia os dados do paciente para a coleção do Firestore.",
         "requestBody": {
@@ -42,15 +52,22 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "nome": { "type": "string", "example": "João Silva" },
-                  "planoAlimentar": { "type": "object" }
+                  "nome": {
+                    "type": "string",
+                    "example": "João Silva"
+                  },
+                  "planoAlimentar": {
+                    "type": "object"
+                  }
                 }
               }
             }
           }
         },
         "responses": {
-          "201": { "description": "Paciente adicionado com sucesso!" }
+          "201": {
+            "description": "Paciente adicionado com sucesso!"
+          }
         }
       }
     },
@@ -96,15 +113,21 @@
     },
     "/api/receitas": {
       "get": {
-        "tags": ["Receitas"],
+        "tags": [
+          "Receitas"
+        ],
         "summary": "Lista todas as receitas cadastradas",
         "description": "Retorna um array com as receitas do Firebase.",
         "responses": {
-          "200": { "description": "Lista retornada com sucesso." }
+          "200": {
+            "description": "Lista retornada com sucesso."
+          }
         }
       },
       "post": {
-        "tags": ["Receitas"],
+        "tags": [
+          "Receitas"
+        ],
         "summary": "Cria uma nova receita",
         "description": "Adiciona uma nova receita ao catálogo.",
         "requestBody": {
@@ -114,18 +137,97 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "titulo": { "type": "string", "example": "Panqueca de Banana Proteica" },
-                  "descricao": { "type": "string", "example": "Lorem ipsum dolor sit amet..." },
-                  "tempoPreparo": { "type": "string", "example": "15 minutos" },
-                  "imagem": { "type": "string", "example": "https://images.unsplash.com/photo-exemplo" },
-                  "categoria": { "type": "string", "example": "Café da Manhã" }
+                  "titulo": {
+                    "type": "string",
+                    "example": "Panqueca de Banana Proteica"
+                  },
+                  "descricao": {
+                    "type": "string",
+                    "example": "Lorem ipsum dolor sit amet..."
+                  },
+                  "tempoPreparo": {
+                    "type": "string",
+                    "example": "15 minutos"
+                  },
+                  "imagem": {
+                    "type": "string",
+                    "example": "https://images.unsplash.com/photo-exemplo"
+                  },
+                  "categoria": {
+                    "type": "string",
+                    "example": "Café da Manhã"
+                  }
                 }
               }
             }
           }
         },
         "responses": {
-          "201": { "description": "Receita adicionada com sucesso!" }
+          "201": {
+            "description": "Receita adicionada com sucesso!"
+          }
+        }
+      }
+    },
+    "/api/agendamentos": {
+      "get": {
+        "tags": [
+          "Agendamentos"
+        ],
+        "summary": "Lista todos os agendamentos cadastrados",
+        "description": "Retorna um array com todos os agendamentos vindos do Firestore.",
+        "responses": {
+          "200": {
+            "description": "Lista de agendamentos retornada com sucesso."
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Agendamentos"
+        ],
+        "summary": "Cria um novo agendamento",
+        "description": "Envia os dados do agendamento para a coleção do Firestore.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "pacienteId": {
+                    "type": "string",
+                    "example": "abc123"
+                  },
+                  "pacienteNome": {
+                    "type": "string",
+                    "example": "Ana Farias"
+                  },
+                  "data": {
+                    "type": "string",
+                    "example": "2026-06-17"
+                  },
+                  "hora": {
+                    "type": "string",
+                    "example": "07:00"
+                  },
+                  "tipoConsulta": {
+                    "type": "string",
+                    "example": "Retorno"
+                  },
+                  "status": {
+                    "type": "string",
+                    "example": "Confirmada"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Agendamento adicionado com sucesso!"
+          }
         }
       }
     }
