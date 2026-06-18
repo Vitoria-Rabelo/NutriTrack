@@ -95,11 +95,31 @@
                     <p>Sábado, 02 de maio de 2026</p>
                 </div>
 
-                <button class="btn-nova">
+                <button class="btn-nova" id="btn-nova-consulta">
                     + Nova Consulta
                 </button>
 
             </div>
+
+            <form id="form-agendamento" style="display: none;">
+                <input type="text" id="paciente-nome" placeholder="Nome do paciente" required>
+                <input type="date" id="data-consulta" required>
+                <input type="time" id="hora-consulta" required>
+
+                <select id="tipo-consulta" required>
+                    <option value="">Tipo da consulta</option>
+                    <option value="Primeira consulta">Primeira consulta</option>
+                    <option value="Retorno">Retorno</option>
+                    <option value="Avaliação">Avaliação</option>
+                </select>
+
+                <select id="status-consulta">
+                    <option value="Aguardando">Aguardando</option>
+                    <option value="Confirmada">Confirmada</option>
+                </select>
+
+                <button type="submit">Salvar</button>
+            </form>
 
             <div class="listas-consultas" id="lista-consultas"></div>
 
@@ -147,6 +167,47 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            const btnNovaConsulta = document.getElementById("btn-nova-consulta");
+            const formAgendamento = document.getElementById("form-agendamento");
+
+            btnNovaConsulta.addEventListener("click", () => {
+                formAgendamento.style.display = "block";
+            });
+
+            formAgendamento.addEventListener("submit", async (event) => {
+                event.preventDefault();
+
+                const novoAgendamento = {
+                    pacienteId: "manual",
+                    pacienteNome: document.getElementById("paciente-nome").value,
+                    data: document.getElementById("data-consulta").value,
+                    hora: document.getElementById("hora-consulta").value,
+                    tipoConsulta: document.getElementById("tipo-consulta").value,
+                    status: document.getElementById("status-consulta").value
+                };
+
+                try {
+                    const resposta = await fetch("http://localhost:3000/api/agendamentos", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(novoAgendamento)
+                    });
+
+                    if (!resposta.ok) {
+                        throw new Error("Erro ao salvar agendamento.");
+                    }
+
+                    formAgendamento.reset();
+                    formAgendamento.style.display = "none";
+                    carregarAgendamentos();
+                } catch (erro) {
+                    console.error("Erro ao salvar agendamento:", erro);
+                    alert("Falha ao salvar agendamento.");
+                }
+            });
+
             carregarAgendamentos();
         });
 
