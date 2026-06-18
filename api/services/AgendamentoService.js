@@ -25,9 +25,10 @@ class Agendamento{
             dadosRecebidos.pacienteNome,
             dadosRecebidos.data,
             dadosRecebidos.hora,
-            dadosRecebidos.tipoConsulta
-
+            dadosRecebidos.tipoConsulta,
+            dadosRecebidos.status
         );
+
         const agendamentoParaSalvar = { ...novoAgendamento };
         const idGerado = await agendamentoRepository.salvar(agendamentoParaSalvar);
         return idGerado;
@@ -37,8 +38,6 @@ class Agendamento{
         const agendamentos = await agendamentoRepository.listarTodos();
         return agendamentos;
     }
-
-    
 }
 
 module.exports = new Agendamento();

@@ -89,10 +89,9 @@
         <div class="card">
 
             <div class="card-header">
-
                 <div>
-                    <h2>Consultas de hoje</h2>
-                    <p>Sábado, 02 de maio de 2026</p>
+                    <h2>Consultas do dia</h2>
+                    <input type="date" id="filtro-data">
                 </div>
 
                 <button class="btn-nova" id="btn-nova-consulta">
@@ -166,12 +165,22 @@
     </nav>
 
     <script>
+        let agendamentosGlobais = [];
+
         document.addEventListener("DOMContentLoaded", () => {
             const btnNovaConsulta = document.getElementById("btn-nova-consulta");
             const formAgendamento = document.getElementById("form-agendamento");
 
             btnNovaConsulta.addEventListener("click", () => {
                 formAgendamento.style.display = "block";
+            });
+
+            const filtroData = document.getElementById("filtro-data");
+
+            filtroData.value = new Date().toISOString().split("T")[0];
+
+            filtroData.addEventListener("change", () => {
+                filtrarAgendamentosPorData();
             });
 
             formAgendamento.addEventListener("submit", async (event) => {
@@ -216,12 +225,24 @@
                 const resposta = await fetch("http://localhost:3000/api/agendamentos");
                 const agendamentos = await resposta.json();
 
-                mostrarAgendamentos(agendamentos);
-                atualizarResumo(agendamentos);
+                agendamentosGlobais = agendamentos;
+                filtrarAgendamentosPorData();
+
             } catch (erro) {
                 console.error("Erro ao carregar agendamentos:", erro);
                 alert("Falha ao carregar agendamentos.");
             }
+        }
+
+        function filtrarAgendamentosPorData() {
+            const dataSelecionada = document.getElementById("filtro-data").value;
+
+            const agendamentosFiltrados = agendamentosGlobais.filter((agendamento) => {
+                return agendamento.data === dataSelecionada;
+            });
+
+            mostrarAgendamentos(agendamentosFiltrados);
+            atualizarResumo(agendamentosFiltrados);
         }
 
         function mostrarAgendamentos(agendamentos) {
