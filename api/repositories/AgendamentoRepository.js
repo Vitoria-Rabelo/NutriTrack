@@ -1,4 +1,4 @@
-const { collection, getDocs, addDoc } = require("firebase/firestore");
+const { collection, getDocs, addDoc, doc, deleteDoc, updateDoc } = require("firebase/firestore");
 const db = require("./firebaseConfig");
 
 class Agendamento {
@@ -29,8 +29,28 @@ class Agendamento {
             return docRef.id;
         } catch (error) {
             console.error("Error adding agendamento: ", error);
-            throw error;
+              throw error;
 
+        }
+    }
+
+    async atualizar(id, agendamentoData) {
+        try {
+            const docRef = doc(db, "agendamentos", id);
+            await updateDoc(docRef, agendamentoData);
+        } catch (error) {
+            console.error("Error updating agendamento:", error);
+            throw error;
+        }
+    }
+
+    async remover(id) {
+        try {
+            const docRef = doc(db, "agendamentos", id);
+            await deleteDoc(docRef);
+        } catch (error) {
+            console.error("Error deleting agendamento:", error);
+            throw error;
         }
     }
 }

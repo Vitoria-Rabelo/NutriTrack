@@ -100,25 +100,28 @@
 
             </div>
 
-            <form id="form-agendamento" style="display: none;">
-                <input type="text" id="paciente-nome" placeholder="Nome do paciente" required>
-                <input type="date" id="data-consulta" required>
-                <input type="time" id="hora-consulta" required>
-
-                <select id="tipo-consulta" required>
-                    <option value="">Tipo da consulta</option>
-                    <option value="Primeira consulta">Primeira consulta</option>
-                    <option value="Retorno">Retorno</option>
-                    <option value="Avaliação">Avaliação</option>
-                </select>
-
-                <select id="status-consulta">
-                    <option value="Aguardando">Aguardando</option>
-                    <option value="Confirmada">Confirmada</option>
-                </select>
-
-                <button type="submit">Salvar</button>
-            </form>
+            <form id="form-agendamento" >
+                <div class="form-group">
+                    <input type="text" id="paciente-nome" placeholder="Nome do paciente" required>
+                    <input type="date" id="data-consulta" required>
+                    <input type="time" id="hora-consulta" required>
+                    
+                    <select id="tipo-consulta" required>
+                        <option value="Tipo da consulta" disabled selected>Tipo da consulta</option>
+                        <option value="Primeira consulta">Primeira consulta</option>
+                        <option value="Retorno">Retorno</option>
+                        <option value="Avaliação">Avaliação</option>
+                    </select>
+                    
+                    <select id="status-consulta">
+                        <option value="Status da consulta" disabled selected>Status da consulta</option>
+                        <option value="Aguardando">Aguardando</option>
+                        <option value="Confirmada">Confirmada</option>
+                    </select>
+                    
+                    <button type="submit" id="btn-salvar-agendamento">Salvar</button>
+                </div>
+                </form>
 
             <div class="listas-consultas" id="lista-consultas"></div>
 
@@ -166,12 +169,18 @@
 
     <script>
         let agendamentosGlobais = [];
+        let agendamentoEditandoId = null;
 
         document.addEventListener("DOMContentLoaded", () => {
             const btnNovaConsulta = document.getElementById("btn-nova-consulta");
             const formAgendamento = document.getElementById("form-agendamento");
-
+            const botaoSalvar = document.getElementById("btn-salvar-agendamento");
+            const listaConsultas = document.getElementById("lista-consultas");
+            
             btnNovaConsulta.addEventListener("click", () => {
+                agendamentoEditandoId = null;
+                botaoSalvar.textContent = "Salvar";
+                formAgendamento.reset();
                 formAgendamento.style.display = "block";
             });
 
@@ -195,9 +204,12 @@
                     status: document.getElementById("status-consulta").value
                 };
 
+                ;
+
                 try {
-                    const resposta = await fetch("http://localhost:3000/api/agendamentos", {
-                        method: "POST",
+                    const modoEdicao = agendamentoEditandoId !== null;
+                    const resposta = await fetch(`http://localhost:3000/api/agendamentos/${agendamentoEditandoId || ""}`, {
+                        method: modoEdicao ? "PUT" : "POST",
                         headers: {
                             "Content-Type": "application/json"
                         },
@@ -205,15 +217,67 @@
                     });
 
                     if (!resposta.ok) {
-                        throw new Error("Erro ao salvar agendamento.");
+                        throw new Error(modoEdicao ? "Erro ao atualizar agendamento." : "Erro ao salvar agendamento.");
                     }
 
+                    agendamentoEditandoId = null;
+                    botaoSalvar.textContent = "Salvar";
                     formAgendamento.reset();
                     formAgendamento.style.display = "none";
                     carregarAgendamentos();
+
                 } catch (erro) {
                     console.error("Erro ao salvar agendamento:", erro);
                     alert("Falha ao salvar agendamento.");
+                }
+            });
+
+            listaConsultas.addEventListener("click", async (event) => {
+                const botao = event.target.closest("button");
+
+                if (!botao) {
+                    return;
+                }
+
+                const cardConsulta = botao.closest(".consulta");
+                if (!cardConsulta) {
+                    return;
+                }
+
+                const agendamentoId = cardConsulta.dataset.id;
+                const agendamentoSelecionado = agendamentosGlobais.find((item) => item.id === agendamentoId);
+
+                if (botao.classList.contains("btn-iniciar")) {
+                    try {
+                        const resposta = await fetch(`http://localhost:3000/api/agendamentos/${agendamentoId}`, {
+                            method: "DELETE"
+                        });
+
+                        if (!resposta.ok) {
+                            throw new Error("Erro ao remover agendamento.");
+                        }
+
+                        carregarAgendamentos();
+                    } catch (erro) {
+                        console.error("Erro ao iniciar consulta:", erro);
+                        alert("Falha ao iniciar a consulta.");
+                    }
+                }
+
+                if (botao.classList.contains("btn-reagendar")) {
+                    if (!agendamentoSelecionado) {
+                        return;
+                    }
+
+                    agendamentoEditandoId = agendamentoSelecionado.id;
+                    botaoSalvar.textContent = "Atualizar";
+                    formAgendamento.style.display = "block";
+
+                    document.getElementById("paciente-nome").value = agendamentoSelecionado.pacienteNome || "";
+                    document.getElementById("data-consulta").value = agendamentoSelecionado.data || "";
+                    document.getElementById("hora-consulta").value = agendamentoSelecionado.hora || "";
+                    document.getElementById("tipo-consulta").value = agendamentoSelecionado.tipoConsulta || "";
+                    document.getElementById("status-consulta").value = agendamentoSelecionado.status || "Aguardando";
                 }
             });
 
@@ -253,6 +317,7 @@
             agendamentos.forEach((agendamento) => {
                 const consulta = document.createElement("div");
                 consulta.classList.add("consulta");
+                consulta.dataset.id = agendamento.id;
 
                 consulta.innerHTML = `
                     <div class="hora">
@@ -264,16 +329,16 @@
                         <p>${agendamento.tipoConsulta}</p>
                     </div>
 
-                    <div class="acoes">
+                      <div class="acoes">
                         <span class="status ${agendamento.status === "Confirmada" ? "confirmada" : "aguardando"}">
                         ${agendamento.status}
                         </span>
 
-                        <button class="btn-primary">
+                        <button type="button" class="btn-primary btn-iniciar">
                         Iniciar
                         </button>
 
-                        <button class="btn-sec">
+                        <button type="button" class="btn-sec btn-reagendar">
                         Reagendar
                         </button>
                     </div>
