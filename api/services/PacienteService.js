@@ -4,6 +4,8 @@ const { PacienteModel } = require("../models/PacienteModel");
 class PacienteService {
     
     async adicionar(dadosRecebidos) {
+        console.log("Dados recebidos para cadastro:", dadosRecebidos);
+
         if (!dadosRecebidos.nome || dadosRecebidos.nome.trim() === "") {
             throw new Error("O nome do paciente é obrigatório para o cadastro.");
         }
