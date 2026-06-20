@@ -26,6 +26,87 @@
     background-color: #008f39;
 }
 
+#filtro-data {
+    margin-top: 10px;
+    min-width: 201px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 2px solid #d0d0d0;
+    background-color: #f9fafb;
+    color: #000000;
+    font-size: 14px;
+}
+
+#filtro-data::-webkit-calendar-picker-indicator {
+    filter: invert(36%) sepia(91%) saturate(1005%) hue-rotate(111deg) brightness(93%) contrast(101%);
+    cursor: pointer;
+}
+
+#filtro-data:focus {
+    border-color: #00a843;
+    box-shadow: 0 0 0 3px rgba(0, 168, 67, 0.12);
+    outline: none;
+}
+
+#form-agendamento {
+    display: none;
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+    padding: 18px;
+    border: 2px solid #d0d0d0;
+    border-radius: 14px;
+    background-color: #f9fafb;
+}
+
+#form-agendamento input,
+#form-agendamento select {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 2px solid #d0d0d0;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    font-size: 14px;
+    outline: none;
+}
+
+#form-agendamento input::-webkit-calendar-picker-indicator {
+    filter: invert(36%) sepia(91%) saturate(1005%) hue-rotate(111deg) brightness(93%) contrast(101%);
+    cursor: pointer;
+}
+
+#form-agendamento select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+#form-agendamento input:focus,
+#form-agendamento select:focus {
+    border-color: #00a843;
+}
+
+#form-agendamento button {
+    border: none;
+    border-radius: 12px;
+    background-color: #00a843;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#form-agendamento button:hover {
+    background-color: #008f39;
+    transform: translateY(-1px);
+}
+
 .listas-consultas {
     display: flex;
     flex-direction: column;
@@ -44,7 +125,8 @@
 }
 
 .consulta:hover {
-    border: 2px solid #00a843;;
+    border: 2px solid #00a843;
+    ;
 }
 
 .hora {
@@ -150,7 +232,7 @@
     font-size: 32px;
 }
 
-.bottom-nav{
+.bottom-nav {
     display: none;
 }
 
@@ -229,8 +311,28 @@
     }
 
     .card-header {
+        align-items: center;
+        gap: 15px;
+    }
+
+
+}
+
+@media (max-width: 480px) {
+    #filtro-data {
+        min-width: 100%;
+    }
+
+    .card-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 15px;
+    }
+
+    .form-group {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    #btn-salvar-agendamento {
+        padding: 12px;
     }
 }
