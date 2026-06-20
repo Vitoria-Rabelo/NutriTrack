@@ -1,13 +1,17 @@
 class PacienteModel {
     
-    constructor(nome, planoAlimentar = null) {
+    constructor(nome, idade, telefone, email, objetivo, planoAlimentar = null) {
 
-        //propriedades úteis ao usuário final
-        this.nome = nome
-        this.planoAlimentar = planoAlimentar
+        // propriedades úteis ao usuário final
+        this.nome = nome;
+        this.idade = idade;
+        this.telefone = telefone;
+        this.email = email;
+        this.objetivo = objetivo;
+        this.planoAlimentar = planoAlimentar;
 
-        //propriedades úteis ao sistema interno
-        this.ativo = true
+        // propriedades úteis ao sistema interno
+        this.ativo = true;
         this.criadoEm = new Date().toISOString();
     }
 

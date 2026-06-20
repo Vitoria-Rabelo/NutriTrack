@@ -43,6 +43,10 @@
                 "type": "object",
                 "properties": {
                   "nome": { "type": "string", "example": "João Silva" },
+                  "idade": { "type": "integer", "example": 25 },
+                  "telefone": { "type": "string", "example": "(88) 99999-9999" },
+                  "email": { "type": "string", "example": "paciente@email.com" },
+                  "objetivo": { "type": "string", "example": "Emagrecimento" },
                   "planoAlimentar": { "type": "object" }
                 }
               }
