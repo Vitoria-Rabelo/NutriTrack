@@ -24,7 +24,7 @@ class ReceitaRepository {
             throw error;
         }
     }
-
+    
     async adicionar(receitaData) {
         try {
             const docRef = await addDoc(this.collectionRef, receitaData);
@@ -35,7 +35,5 @@ class ReceitaRepository {
         }
     }
 }
-
-
 
 module.exports = new ReceitaRepository();
