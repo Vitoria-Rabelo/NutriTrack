@@ -1,4 +1,4 @@
-const { collection, addDoc, getDocs, doc, updateDoc } = require("firebase/firestore");
+const { collection, addDoc, getDocs, doc, updateDoc, deleteDoc, arrayUnion } = require("firebase/firestore");
 const db = require("./firebaseConfig");
 
 class PacienteRepository {
@@ -13,6 +13,33 @@ class PacienteRepository {
             return docRef.id;
         } catch (error) {
             console.error("Erro ao salvar o paciente:", error);
+            throw error;
+        }
+    }
+
+    async adicionarHistorico(id, novaMedicao) {
+        try {
+            const pacienteRef = doc(this.collectionRef, id);
+            
+            await updateDoc(pacienteRef, {
+                historico: arrayUnion(novaMedicao),
+                pesoAtual: novaMedicao.peso 
+            });
+            return true;
+        } catch (error) {
+            console.error("Erro ao adicionar histórico:", error);
+            throw error;
+        }
+    }
+
+    async deletar(id) {
+        try {
+            const pacienteRef = doc(this.collectionRef, id);
+
+            await deleteDoc(pacienteRef);
+            return true;
+        } catch (error) {
+            console.error("Não foi possível deletar o paciente.", error)
             throw error;
         }
     }
@@ -37,6 +64,18 @@ class PacienteRepository {
         }
     }
 
+    async atalizar(id, dadosAtualizados) {
+        try {
+            const pacienteRef = doc(this.collectionRef, id);
+
+            await updateDoc(pacienteRef, dadosAtualizados);
+            return true;
+        } catch (error) {
+            console.error("Não foi possível editar os dados do paciente.", error);
+            throw error;
+        }
+    }
+
     async atualizarPlano(id, planoAlimentar) {
         try {
             const pacienteRef = doc(this.collectionRef, id);
@@ -49,6 +88,7 @@ class PacienteRepository {
         }
         
     }
+
 }
 
 module.exports = new PacienteRepository();

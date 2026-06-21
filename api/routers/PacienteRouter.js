@@ -34,6 +34,19 @@ router.post(
     }
 );
 
+router.post("/:id/historico", async (request, response) => {
+    try {
+        const pacienteId = request.params.id;
+        const dadosMedicao = request.body;
+
+        await pacienteService.adicionarHistorico(pacienteId, dadosMedicao);
+
+        response.status(201).json({ msg: "Medição adicionada ao histórico com sucesso!" });
+    } catch (error) {
+        response.status(400).json({ erro: error.message });
+    }
+});
+
 router.put("/:id/plano", async (request, response) => {
     try {
         const pacienteId = request.params.id; 
@@ -46,6 +59,31 @@ router.put("/:id/plano", async (request, response) => {
         response.status(400).json({ erro: error.message });
     }
 })
+
+router.delete("/:id", async (request, response) => {
+    try {
+        const pacienteId = request.params.id;
+        
+        await pacienteService.deletar(pacienteId);
+        
+        response.status(200).json({ msg: "Paciente excluído com sucesso!" });
+    } catch (error) {
+        response.status(400).json({ erro: error.message });
+    }
+});
+
+router.put("/:id", async (request, response) => {
+    try {
+        const pacienteId = request.params.id; 
+        const dadosAtualizados = request.body;
+
+        await pacienteService.atualizar(pacienteId, dadosAtualizados);
+        
+        response.status(200).json({ msg: "Dados do paciente atualizados com sucesso!" });
+    } catch (error) {
+        response.status(400).json({ erro: error.message });
+    }
+});
 
 
 module.exports = router;
