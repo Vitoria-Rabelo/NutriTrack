@@ -48,6 +48,12 @@ class ReceitaService {
         const idGerado = await ReceitaRepository.adicionar(receitaParaSalvar);
         return idGerado;
     }
+
+    async atualizarReceita(id, dadosAtualizados) {
+    if (!id) throw new Error("O ID da receita é obrigatório para edição.");
+    return await ReceitaRepository.atualizar(id, dadosAtualizados);
+    }
+
 }
 
 module.exports = new ReceitaService();

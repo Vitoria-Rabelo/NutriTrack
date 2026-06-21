@@ -1,4 +1,4 @@
-const { collection, getDocs, addDoc } = require("firebase/firestore");
+const { collection, getDocs, addDoc, doc, updateDoc } = require("firebase/firestore");
 const db = require("./firebaseConfig");
 
 class ReceitaRepository {
@@ -24,18 +24,17 @@ class ReceitaRepository {
             throw error;
         }
     }
-
-    async adicionar(receitaData) {
+    
+    async atualizar(id, dadosAtualizados) {
         try {
-            const docRef = await addDoc(this.collectionRef, receitaData);
-            return docRef.id;
+            const docRef = doc(db, "receitas", id);
+            await updateDoc(docRef, dadosAtualizados);
+            return { id, ...dadosAtualizados };
         } catch (error) {
-            console.error("Erro ao inserir receita:", error)
+            console.error("Erro ao atualizar receita:", error);
             throw error;
         }
     }
 }
-
-
 
 module.exports = new ReceitaRepository();

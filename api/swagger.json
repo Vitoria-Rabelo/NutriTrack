@@ -52,13 +52,12 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "nome": {
-                    "type": "string",
-                    "example": "João Silva"
-                  },
-                  "planoAlimentar": {
-                    "type": "object"
-                  }
+                  "nome": { "type": "string", "example": "João Silva" },
+                  "id": { "type": "integer", "example": 25 },
+                  "telefone": { "type": "string", "example": "(88) 99999-9999" },
+                  "email": { "type": "string", "example": "paciente@email.com" },
+                  "objetivo": { "type": "string", "example": "Emagrecimento" },
+                  "planoAlimentar": { "type": "object" }
                 }
               }
             }
@@ -116,7 +115,7 @@
         "tags": [
           "Receitas"
         ],
-        "summary": "Lista todas as receitas cadastradas",
+        "summary": "Lista receitas",
         "description": "Retorna um array com as receitas do Firebase.",
         "responses": {
           "200": {
@@ -128,7 +127,7 @@
         "tags": [
           "Receitas"
         ],
-        "summary": "Cria uma nova receita",
+        "summary": "Cria receita",
         "description": "Adiciona uma nova receita ao catálogo.",
         "requestBody": {
           "required": true,
@@ -143,7 +142,7 @@
                   },
                   "descricao": {
                     "type": "string",
-                    "example": "Lorem ipsum dolor sit amet..."
+                    "example": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia quisquam doloremque nostrum laboriosam, blanditiis libero corporis nulla a aut?"
                   },
                   "tempoPreparo": {
                     "type": "string",
@@ -165,6 +164,66 @@
         "responses": {
           "201": {
             "description": "Receita adicionada com sucesso!"
+          }
+        }
+      }
+    },
+    "/api/receitas/{id}": {
+      "put": {
+        "tags": [
+          "Receitas"
+        ],
+        "summary": "Edita/Atualiza uma receita existente",
+        "description": "Atualiza os campos de uma receita salva no Firestore passando o seu ID no caminho.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID único da receita gerado pelo Firebase",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "titulo": {
+                    "type": "string",
+                    "example": "Panqueca de Aveia Atualizada"
+                  },
+                  "descricao": {
+                    "type": "string",
+                    "example": "Nova descrição editada..."
+                  },
+                  "tempoPreparo": {
+                    "type": "string",
+                    "example": "20 minutos"
+                  },
+                  "imagem": {
+                    "type": "string",
+                    "example": "https://images.unsplash.com/photo-exemplo"
+                  },
+                  "categoria": {
+                    "type": "string",
+                    "example": "Café da Manhã"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Receita atualizada com sucesso!"
+          },
+          "400": {
+            "description": "Erro na requisição ou ID inválido"
           }
         }
       }

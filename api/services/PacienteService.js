@@ -11,7 +11,11 @@ class PacienteService {
         }
 
         const novoPaciente = new PacienteModel(
-            dadosRecebidos.nome, 
+            dadosRecebidos.nome,
+            dadosRecebidos.idade,
+            dadosRecebidos.telefone,
+            dadosRecebidos.email,
+            dadosRecebidos.objetivo,
             dadosRecebidos.planoAlimentar
         );
 
