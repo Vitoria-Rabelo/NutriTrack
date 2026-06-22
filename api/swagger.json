@@ -243,7 +243,7 @@
         "tags": [
           "Receitas"
         ],
-        "summary": "Cria receita",
+        "summary": "Criar receita",
         "description": "Adiciona uma nova receita ao catálogo.",
         "requestBody": {
           "required": true,
@@ -271,6 +271,10 @@
                   "categoria": {
                     "type": "string",
                     "example": "Café da Manhã"
+                  },
+                  "linkExterno": {
+                    "type": "string",
+                    "example": "https://pt.wikibooks.org/wiki/Livro_de_receitas/Iogurtes_de_morango"
                   }
                 }
               }
@@ -289,7 +293,7 @@
         "tags": [
           "Receitas"
         ],
-        "summary": "Edita/Atualiza uma receita existente",
+        "summary": "Atualizar receita",
         "description": "Atualiza os campos de uma receita salva no Firestore passando o seu ID no caminho.",
         "parameters": [
           {
@@ -328,6 +332,10 @@
                   "categoria": {
                     "type": "string",
                     "example": "Café da Manhã"
+                  },
+                  "linkExterno": {
+                    "type": "string",
+                    "example": "https://pt.wikibooks.org/wiki/Livro_de_receitas/Iogurtes_de_morango"
                   }
                 }
               }

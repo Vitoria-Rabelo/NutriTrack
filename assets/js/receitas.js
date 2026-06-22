@@ -20,6 +20,7 @@ async function buscarReceitas(categoria = null) {
         containerReceitas.innerHTML = `<p class="erro-mensagem">Erro ao carregar as receitas.</p>`;
     }
 }
+
 function renderizarCards(listaDeReceitas) {
     const containerReceitas = document.getElementById("card-container");
     containerReceitas.innerHTML = "";
@@ -39,7 +40,8 @@ function renderizarCards(listaDeReceitas) {
                     <p class="card-hover-text">
                         ${receita.descricao || 'Sem descrição disponível.'}
                     </p>
-                    <a href="#" class="card-hover-link">
+                    
+                    <a href="${receita.linkExterno || '#'}" target="_blank" class="card-hover-link">
                         <span>Ver Detalhes</span>
                         <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
