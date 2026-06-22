@@ -34,7 +34,7 @@ router.post(
     }
 );
 
-router.post("/:id/historico", async (request, response) => {
+router.post("/:id/historico", express.json(), async (request, response) => {
     try {
         const pacienteId = request.params.id;
         const dadosMedicao = request.body;
