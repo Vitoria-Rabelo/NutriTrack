@@ -109,7 +109,7 @@
                     </tr>
                 </thead>
                 <tbody id="tabela-consultas">
-                    </tbody>
+                </tbody>
             </table>
         </section>
     </main>
@@ -133,7 +133,7 @@
         </a>
     </nav>
 
-        <div id="modal-paciente" class="modal">
+    <div id="modal-paciente" class="modal">
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Cadastrar Novo Paciente</h2>
@@ -167,10 +167,26 @@
                         <option value="Saúde">Saúde</option>
                     </select>
                 </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pesoInicial">Peso Inicial (kg)</label>
+                        <input type="number" step="0.1" min="0" id="pesoInicial" placeholder="Ex: 85.0">
+                    </div>
+                    <div class="form-group">
+                        <label for="pesoAtual">Peso Atual (kg)</label>
+                        <input type="number" step="0.1" min="0" id="pesoAtual" placeholder="Ex: 82.0">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="meta">Meta de Peso (kg)</label>
+                    <input type="number" step="0.1" min="0" id="meta" placeholder="Ex: 75.0">
+                </div>
+
                 <button type="submit" class="btn-salvar">Salvar Paciente</button>
             </form>
         </div>
-        </div>
+    </div>
     <script src="../assets/js/dashboard.js"></script>
 </body>
 

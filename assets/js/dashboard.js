@@ -5,7 +5,6 @@ function removerAcentos(texto) {
     return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
 
-
 function atualizarCard(idElemento, valor) {
     const elemento = document.getElementById(idElemento);
     if (elemento) {
@@ -43,6 +42,45 @@ async function carregarPacientes() {
     } catch (erro) {
         console.error("Erro ao carregar os pacientes da API:", erro);
         renderizarTabela([]);
+    }
+}
+
+function calcularMetricasDashboard() {
+    atualizarCard('card-total-pacientes', pacientes.length);
+
+    const totalPlanos = pacientes.filter(p => {
+        return p.planoAlimentar !== undefined && p.planoAlimentar !== null && String(p.planoAlimentar).trim() !== "";
+    }).length;
+    atualizarCard('card-planos-ativos', totalPlanos);
+
+    const cardTaxaSucesso = document.getElementById('card-taxa-sucesso');
+    if (cardTaxaSucesso) {
+        if (pacientes.length === 0) {
+            cardTaxaSucesso.innerText = "0%";
+            return;
+        }
+
+        const pacientesComMeta = pacientes.filter(p => (parseFloat(p.meta) || 0) > 0);
+
+        if (pacientesComMeta.length === 0) {
+            cardTaxaSucesso.innerText = "0%";
+            return;
+        }
+
+        const atingiramMeta = pacientesComMeta.filter(p => {
+            const pesoAtual = parseFloat(p.pesoAtual) || 0;
+            const meta = parseFloat(p.meta) || 0;
+            const objetivo = p.objetivo || "Saúde";
+
+            if (objetivo === "Hipertrofia") {
+                return pesoAtual >= meta;
+            } else {
+                return pesoAtual <= meta;
+            }
+        }).length;
+
+        const porcentagem = Math.round((atingiramMeta / pacientesComMeta.length) * 100);
+        cardTaxaSucesso.innerText = `${porcentagem}%`;
     }
 }
 
@@ -140,7 +178,10 @@ function configurarModal() {
             idade: parseInt(document.getElementById('idade').value) || 0,
             telefone: document.getElementById('telefone').value,
             email: document.getElementById('email').value,
-            objetivo: document.getElementById('objetivo').value
+            objetivo: document.getElementById('objetivo').value,
+            pesoInicial: parseFloat(document.getElementById('pesoInicial').value) || 0,
+            pesoAtual: parseFloat(document.getElementById('pesoAtual').value) || 0,
+            meta: parseFloat(document.getElementById('meta').value) || 0
         };
 
         const url = idPacienteSendoEditado 
@@ -200,6 +241,9 @@ function editarPaciente(id) {
     document.getElementById('telefone').value = paciente.telefone || "";
     document.getElementById('email').value = paciente.email || "";
     document.getElementById('objetivo').value = paciente.objetivo || "Saúde";
+    document.getElementById('pesoInicial').value = paciente.pesoInicial || "";
+    document.getElementById('pesoAtual').value = paciente.pesoAtual || "";
+    document.getElementById('meta').value = paciente.meta || "";
 
     const modal = document.getElementById('modal-paciente');
     const modalTitulo = modal.querySelector('.modal-header h2');
@@ -210,9 +254,8 @@ function editarPaciente(id) {
 
 function inicializarDashboard() {
     renderizarTabela(pacientes);
-    atualizarCard('card-total-pacientes', pacientes.length);
+    calcularMetricasDashboard();
 }
-
 
 document.addEventListener('DOMContentLoaded', () => {
     configurarBusca();

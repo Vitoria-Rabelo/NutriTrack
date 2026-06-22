@@ -64,7 +64,7 @@ class PacienteRepository {
         }
     }
 
-    async atalizar(id, dadosAtualizados) {
+    async atualizar(id, dadosAtualizados) {
         try {
             const pacienteRef = doc(this.collectionRef, id);
 
