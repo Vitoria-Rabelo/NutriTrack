@@ -45,3 +45,14 @@ O projeto foi construído focando em performance e segurança, seguindo boas pr�
 1. **Clone o repositório:**
    ```bash
    git clone [https://github.com/seu-usuario/NutriTrack.git](https://github.com/Vitoria-Rabelo/NutriTrack.git)
+ 
+2. **Instale as dependências (Node.js/npm)**
+   # Entre na pasta do servidor
+   ```bash
+   cd backend
+   npm install
+3. **Iniciar o Servidor API**
+   ```bash
+   node api/app.js
+4. **Acessar o Site pelo Navegador**
+   Com a extensão LiveServer instalada abra o arquivo principal do frontend. Clique no botão "Go Live" na barra inferior do editor. O site abrirá automaticamente no seu navegador (geralmente em                    http://127.0.0.1:5500).
