@@ -85,8 +85,13 @@ main.content, main {
 }
 
 .nav-logo {
-    padding: 16px;
+    height: 90px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    padding: 0 16px; 
     border-bottom: #e5e7eb 1px solid;
+    box-sizing: border-box; 
 }
 
 .img-logo {
@@ -158,12 +163,14 @@ main.content, main {
 }
 
 .page-header {
+    height: 90px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 32px;
+    padding: 0 32px; 
     background-color: #FFFFFF;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-bottom: #e5e7eb 1px solid;
 }
 
 .title-text {
